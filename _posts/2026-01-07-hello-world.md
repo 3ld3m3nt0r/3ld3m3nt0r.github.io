@@ -279,6 +279,9 @@ SELECT * FROM users WHERE email IS NOT NULL;
 
 -- Obtiene todos datos de la tabla "users" con email no nulo y edad igual a 15
 SELECT * FROM users WHERE email IS NOT NULL AND age = 15;
+
+-- Obtiene el nombre, apellido y edad de la tabla "users", y si la edad es nula la muestra como 0
+SELECT name, surname, IFNULL(age, 0) AS age FROM users;
 ```
 
 ### Min, Max
@@ -400,3 +403,62 @@ FROM users;
 
 
 ![Example CASE](assets/img/example.jpeg){: w="550" h="400" }
+
+## Relaciones
+
+![Example CASE](assets/img/Relaciones.jpg){: w="200" h="200" }
+
+```sql
+-- El campo user_id de la tabla "dni" es clave foránea de la clave primaria user_id de la tabla "users"
+-- (Un usuario sólo puede tener un DNI. Un DNI sólo puede estar asociado a un usuario)
+CREATE TABLE dni(
+    dni_id int AUTO_INCREMENT PRIMARY KEY,
+    dni_number int NOT NULL,
+    user_id int,
+    UNIQUE(dni_id),
+    FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+```
+
+> - Para las relaciones (1:1) -> La clave foránea va en la tabla dependiente.
+{: .prompt-info }
+
+```sql
+CREATE TABLE companies(
+    company_id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) NOT NULL
+);
+ALTER TABLE users
+ADD company_id int;
+
+-- El campo company_id de la tabla "users" es clave foránea de la clave primaria company_id de la tabla "companies"
+-- (Un empleado (usuario) sólo puede tener una empresa, pero una empresa puede tener muchos empleados (usuarios))
+ALTER TABLE users 
+ADD CONSTRAINT fk_companies
+FOREIGN KEY(company_id) REFERENCES companies(company_id)
+```
+
+> - Para las relaciones (1:N) -> La clave foránea siempre va en el lado N (muchos).
+{: .prompt-info }
+
+```sql
+CREATE TABLE languages(
+    language_id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) NOT NULL
+);
+
+-- El campo user_id y language_id de la tabla intermedia "users_languages" es clave foránea de las
+-- claves primarias user_id de la tabla "users" y de language_id de la tabla "languages"
+-- Un usuario puede conoces muchos lenguajes. Un lenguaje puede ser conocido por muchos usuarios.
+CREATE TABLE users_languages(
+    users_language_id int AUTO_INCREMENT PRIMARY KEY,
+    user_id int,
+    language_id int,
+    FOREIGN KEY(user_id) REFERENCES users(user_id),
+    FOREIGN KEY(language_id) REFERENCES languages(language_id),
+    UNIQUE (user_id, language_id)
+);
+```
+
+> - Para las relaciones (N:M) -> Tabla intermedia con FKs a ambas tablas.
+{: .prompt-info }
