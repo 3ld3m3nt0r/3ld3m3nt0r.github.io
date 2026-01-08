@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://media.istockphoto.com/id/538665020/es/foto/meme-de-internet-por-qu%C3%A9-no-ilustraci%C3%B3n-3d-de-la-cara-de-la-rabia.jpg?s=612x612&w=0&k=20&c=uxICPhBq1asx7S1h0FSfodEI0Nt_6RyNHr-HV4XahS8=
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
