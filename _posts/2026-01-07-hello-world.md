@@ -257,3 +257,59 @@ SELECT * FROM users LIMIT 3;
 -- Obtiene las 2 primeras filas de la tabla "users" con email distinto a sara@gmail.com o edad igual a 15
 SELECT * FROM users WHERE NOT email = 'sara@gmail.com' OR age = 15 LIMIT 2;
 ``` 
+
+### Null
+```sql
+-- Obtiene todos datos de la tabla "users" con email nulo
+SELECT * FROM users WHERE email IS NULL;
+
+-- Obtiene todos datos de la tabla "users" con email no nulo
+SELECT * FROM users WHERE email IS NOT NULL;
+
+-- Obtiene todos datos de la tabla "users" con email no nulo y edad igual a 15
+SELECT * FROM users WHERE email IS NOT NULL AND age = 15;
+```
+
+### Min, Max
+```sql
+-- Obtiene el valor menor del campo edad de la tabla "users"
+Select MIN(age) FROM users;
+
+-- Obtiene el valor mayor del campo edad de la tabla "users"
+Select MAX(age) FROM users;
+```
+
+### Count
+```sql
+-- Cuenta cuantas filas contiene la tabla "users"
+Select COUNT(*) FROM users;
+
+-- Cuenta cuantas filas contienen un dato no nulo en el campo edad de la tabla "users"
+Select COUNT(age) FROM users;
+```
+
+### Sum
+```sql
+-- Suma todos los valores del campo edad de la tabla "users"
+Select SUM(age) FROM users;
+```
+
+### Avg
+```sql
+-- Obitne la media de edad de la tabla "users"
+Select AVG(age) FROM users;
+```
+### In
+
+```sql
+-- Ordena todos los datos de la tabla "users" con nombre igual a carlos y sara
+SELECT * FROM users WHERE name IN ('carlos', 'sara')
+```
+
+### Between
+
+```sql
+-- Ordena todos los datos de la tabla "users" con edad comprendida entre 20 y 30
+SELECT * FROM users WHERE age BETWEEN 20 AND 30
+```
+
