@@ -4,7 +4,7 @@ description: "Apuntes de MySql"
 last_modified_at: false
 date: 2026-01-08 06:23:59 -500
 categories: [BaseDeDatos, Mysql]
-tags: [Relacional, querys]
+tags: [Relacional, Querys]
 image: https://altnix.com/_next/static/media/mySQL.d519545a.png
 ---
 
@@ -167,6 +167,17 @@ UPDATE users SET age = 20, init_date = '2020-10-12' WHERE user_id = 11
 -- Elimina el registro de la tabla "users" con identificador igual a 11
 DELETE FROM users WHERE user_id = 11;
 ```
+## Ejemplo practico
+
+
+| user_id | name   | surname  | age | init_date  | email             |
+|--------:|--------|----------|----:|------------|-------------------|
+| 1       | John   | Doe      | 25  | 2026-01-08 | johndoe@gmail.com |
+| 2       | Sara   | NULL     | 20  | 2023-10-12 | sara@gmail.com    |
+| 3       | Carlos | Azaustro | 15  | NULL       | sara@gmail.com    |
+| 4       | S4vitar| NULL     | NULL| NULL       | NULL              |
+| 5       | Miriam | Gonzáles | 15  | NULL       | miriam@gmail.com  |
+| 6       | Martín | Beta     | NULL| NULL       | NULL              |
 
 
 ## Reading
@@ -313,3 +324,79 @@ SELECT * FROM users WHERE name IN ('carlos', 'sara')
 SELECT * FROM users WHERE age BETWEEN 20 AND 30
 ```
 
+### Alias
+```sql
+-- Establece el alias 'Fecha de inicio en programación' a la columna init_date
+SELECT name, init_date AS 'Fecha de inicio en programación' FROM users WHERE name = 'carlos'
+```
+
+### Concat
+```sql
+-- Concatena en una sola columa los campos nombre y apellido
+SELECT CONCAT('Nombre: ', name, ', Apellidos: ', surname) FROM users
+
+-- Concatena en una sola columa los campos nombre y apellido y le establece el alias 'Nombre completo'
+SELECT CONCAT('Nombre: ', name, ', Apellidos: ', surname) AS 'Nombre completo' FROM users
+```
+
+### Group by
+```sql
+-- Agrupa los resultados por edad diferente
+SELECT MAX(age) FROM users GROUP BY age
+
+-- Agrupa los resultados por edad diferente y cuenta cuantos registros existen de cada una
+SELECT COUNT(age), age FROM users GROUP BY age
+
+-- Agrupa los resultados por edad diferente, cuenta cuantos registros existen de cada una y los ordena
+SELECT COUNT(age), age FROM users GROUP BY age ORDER BY age ASC
+
+-- Agrupa los resultados por edad diferente mayor de 15, cuenta cuantos registros existen de cada una y los ordena
+SELECT COUNT(age), age FROM users WHERE age > 15 GROUP BY age ORDER BY age ASC
+
+```
+
+### Having
+```sql
+-- Cuenta cuantas filas contienen un dato no nulo en el campo edad de la tabla "users" mayor que 3
+SELECT COUNT(age) FROM users HAVING COUNT(age) > 3
+
+--- Devuelve los productos cuya suma total de cantidades vendidas es mayor a 10.
+SELECT producto, SUM(cantidad) FROM ventas GROUP BY producto HAVING SUM(cantidad) > 10
+```
+#### Ejemplo having 
+
+| producto | cantidad |
+|----------|----------|
+| A        | 5        |
+| A        | 3        |
+| B        | 2        |
+| B        | 10       |
+
+> - Se usa cuando necesitas poner condiciones sobre funciones de agregación. 
+{: .prompt-tip }
+
+
+### Case
+
+```sql
+-- Obtiene todos los datos de la tabla "users" y establece condiciones de visualización de cadenas de texto según el valor de la edad 
+SELECT *,
+CASE 
+    WHEN age > 18 THEN 'Es mayor de edad'
+    WHEN age = 18 THEN 'Acaba de cumplir la mayoría de edad'
+    ELSE 'Es menor de edad'
+END AS '¿Es mayor de edad?'
+FROM users;
+
+-- Obtiene todos los datos de la tabla "users" y establece condiciones de visualización de valores booleanos según el valor de la edad 
+SELECT *,
+CASE 
+    WHEN age > 17 THEN True
+    ELSE False
+END AS '¿Es mayor de edad?'
+FROM users;
+```
+#### Ejemplo case 
+
+
+![Example CASE](assets/img/example.jpeg){: w="550" h="400" }
