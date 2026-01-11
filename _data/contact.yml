@@ -1,0 +1,11 @@
+#  The contact options.
+
+- type: github
+  icon: "fab fa-github"
+
+- type: twitter
+  icon: "fa-brands fa-x-twitter"
+
+- type: hackthebox
+  icon: "fa-solid fa-cube"
+  url: 'https://app.hackthebox.com/profile/1129266'
