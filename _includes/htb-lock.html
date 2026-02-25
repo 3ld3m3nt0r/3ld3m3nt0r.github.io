@@ -1,0 +1,22 @@
+<div class="htb-locked" id="htbBox-{{ include.id }}">
+  <div class="htb-header">
+    <h2>Active HackTheBox Challenge</h2>
+    <span class="badge">SECURED</span>
+  </div>
+
+  <p>
+    This challenge is currently active on HackTheBox. According to HTB's content
+    policy, sharing writeups of active challenges is prohibited.
+  </p>
+
+  <input
+    type="password"
+    id="htbPassword-{{ include.id }}"
+    placeholder="Enter access password..."
+  />
+  <button onclick="unlockContent('{{ include.id }}')">Unlock Content</button>
+</div>
+
+<div id="protectedContent-{{ include.id }}" style="display: none">
+  {{ include.content | markdownify }}
+</div>

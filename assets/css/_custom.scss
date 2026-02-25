@@ -1,0 +1,54 @@
+.htb-locked {
+  background: linear-gradient(145deg, #1f2937, #111827);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #2d3748;
+  color: #e5e7eb;
+  margin: 2rem 0;
+}
+
+.htb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.htb-header h2 {
+  margin: 0;
+}
+
+.badge {
+  background: #3b82f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.htb-locked input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: white;
+}
+
+.htb-locked button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #60a5fa;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.htb-locked button:hover {
+  background: #3b82f6;
+}
+
+.htb-locked {
+  transition: opacity 0.3s ease;
+}

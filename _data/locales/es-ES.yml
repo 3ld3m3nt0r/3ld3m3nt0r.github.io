@@ -40,13 +40,13 @@ copyright:
     Salvo que se indique explícitamente, las entradas de este blog están licenciadas
     bajo la Creative Commons Attribution 4.0 International (CC BY 4.0) License por el autor.
 
-meta: Hecho con :PLATFORM usando el tema :THEME (Personalizado por Vz0n)
+meta: Hecho con :PLATFORM usando el tema :THEME (Personalizado por 3ld3m3nt0r)
 
 not_found:
   statement: Lo sentimos, hemos perdido esa URL o apunta a algo que no existe.
 
 notification:
-  update_found: Parece que Vz0n ha actualizado el contenido del blog.
+  update_found: Parece que 3ld3m3nt0r ha actualizado el contenido del blog.
   update: Refrescar página
 
 # ----- Posts related labels -----
