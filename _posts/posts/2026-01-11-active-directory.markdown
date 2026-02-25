@@ -7,7 +7,7 @@ categories: [Active Directory]
 tags: [Cyberseguridad, Windows]
 home_image: banner
 banner:
-  path: assets\posts\active-directory.png
+  path: /assets/posts/active-directory.png
   alt: "Active Directory"
 ---
 
