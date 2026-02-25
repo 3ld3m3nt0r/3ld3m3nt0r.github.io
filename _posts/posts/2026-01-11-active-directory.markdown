@@ -12,4 +12,4 @@ banner:
 ---
 
 > coming soon
-{: .prompt-warning }
+{: .prompt-warning }git status
