@@ -16,9 +16,6 @@ assets/writeups/
 assets/img/favicons/
 _drafts/
 
-!_posts/posts/*.md
-!_posts/posts/*.markdown
-
 # RubyGems
 *.gem
 
@@ -34,3 +31,7 @@ package-lock.json
 !.vscode/tasks.json
 
 # Misc
+
+!_posts/posts/
+!_posts/posts/*.md
+!_posts/posts/*.markdown

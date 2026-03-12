@@ -1,4 +1,5 @@
 ---
+pin: true
 title: "Javascript"
 description: "Apuntes de Javascript"
 tags: []
