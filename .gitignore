@@ -16,6 +16,9 @@ assets/writeups/
 assets/img/favicons/
 _drafts/
 
+!_posts/posts/*.md
+!_posts/posts/*.markdown
+
 # RubyGems
 *.gem
 
