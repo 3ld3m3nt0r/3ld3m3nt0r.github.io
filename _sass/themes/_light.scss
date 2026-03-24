@@ -35,7 +35,7 @@
   /* Sidebar */
   --site-title-color: rgb(113, 113, 113);
   --site-subtitle-color: #717171;
-  --sidebar-bg: radial-gradient(circle, #5a1a1a 0%, #1a0f0f 100%);
+  --sidebar-bg: radial-gradient(circle, #251258 0%, #191425 100%);
   --sidebar-border-color: rgb(84, 83, 83, 0.3);
   --sidebar-muted-color: #868686;
   --sidebar-active-color: rgb(255, 255, 255, 0.95);
@@ -349,4 +349,19 @@
   color: #ffffff !important; /* fuerza a blanco */
   text-shadow: none !important;
   transition: color 0.3s;
+}
+
+.post,
+.post-preview,
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.post:hover,
+.post-preview:hover {
+  border-color: #007bff;
+  transform: translateY(-3px);
 }
