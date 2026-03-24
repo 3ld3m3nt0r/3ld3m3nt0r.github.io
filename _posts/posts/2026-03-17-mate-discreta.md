@@ -6,7 +6,7 @@ categories: []
 math: true
 home_image: banner
 banner:
-  path: assets\posts\mate-discr.png
+  path: /assets/posts/mate-discr.png
   alt: mate-discr
 ---
 
