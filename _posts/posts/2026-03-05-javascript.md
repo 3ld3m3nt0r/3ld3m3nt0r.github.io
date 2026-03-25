@@ -3,7 +3,7 @@ pin: true
 title: "Javascript"
 description: "Apuntes de Javascript"
 tags: []
-categories: []
+categories: ["Lenguajes", "JS"]
 home_image: banner
 banner:
   path: https://codersfree.nyc3.cdn.digitaloceanspaces.com/posts/que-es-javascript-descubre-sus-5-principales-usos.jpg

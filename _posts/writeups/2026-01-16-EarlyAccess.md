@@ -3,7 +3,7 @@ layout: post
 title: HackTheBox-EarlyAccess
 description: Resolucion de la maquina EarlyAccess de HackTheBox
 date: 2026-01-10 20:24:59 -500
-categories: [Hard]
+categories: [HTB, Hard]
 tags: [CSRF]
 home_image: logo
 logo:

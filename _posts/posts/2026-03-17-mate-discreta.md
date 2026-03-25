@@ -1,8 +1,8 @@
 ---
 title: "Matemática Discreta"
 description: "Apuntes de matemática discreta UPC"
-tags: []
-categories: []
+tags: ["Matematica"]
+categories: ["Matematica"]
 math: true
 home_image: banner
 banner:
