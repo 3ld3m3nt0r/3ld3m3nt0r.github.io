@@ -409,7 +409,7 @@ Un 1% de mejora diaria hace una gran diferencia a largo plazo.
 En la primera lista, anota la fecha actual y todo lo que sabes sobre el tema que te interesa, incluyendo tus habilidades, con una escala del 1 al 10. Intenta que sea lo más detallada posible. Cuanto más detallada sea, más clara será la diferencia que podrás apreciar más adelante. Cuando creas que la lista está lista, anótala o guárdala de forma que puedas consultarla incluso después de un año.
 
 **Lista 2 (proceso):**
-La segunda lista se actualiza continuamente. Esto significa que, en cuanto te familiarices con un tema y aprendas algo nuevo, lo añadirás a la lista. Intenta aprender cada día, aunque solo te lleve 10 minutos. Si quieres obtener mejores resultados de forma más sistemática, registra las semanas del calendario.
+La segunda lista se actualiza continuamente. Esto significa que, en cuanto te familiarices con un tema y aprendas algo nuevo, lo añadirás a la lista. Intenta aprender cada día, aunque solo te lleve 10 minutos. Si quieres obtener mejores resultados de forma más sistemática, registra las semanas del calendario. 
 
 ## Conclusión
 
