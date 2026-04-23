@@ -1,0 +1,138 @@
+/* ============================= */
+/*   PYTHON THEME - FORZADO      */
+/*   Chirpy + Rouge FIX TOTAL    */
+/* ============================= */
+
+/* ===== KEYWORDS ===== */
+/* import, from, def, return */
+.language-python.highlighter-rouge .highlight .k,
+.language-python.highlighter-rouge .highlight .kn {
+  color: #c586c0 !important;
+}
+
+/* True, False, None */
+.language-python.highlighter-rouge .highlight .kc {
+  color: #569cd6 !important;
+}
+
+/* ===== NOMBRES ===== */
+.language-python.highlighter-rouge .highlight .n {
+  color: #9cdcfe !important;
+}
+
+/* ===== FUNCIONES ===== */
+.language-python.highlighter-rouge .highlight .nf {
+  color: #dcdcaa !important;
+}
+
+/* ===== CLASES ===== */
+.language-python.highlighter-rouge .highlight .nc {
+  color: #4ec9b0 !important;
+}
+
+/* ===== STRINGS ===== */
+.language-python.highlighter-rouge .highlight .s,
+.language-python.highlighter-rouge .highlight .s1,
+.language-python.highlighter-rouge .highlight .s2 {
+  color: #ce9178 !important;
+}
+
+/* ===== COMENTARIOS ===== */
+.language-python.highlighter-rouge .highlight .c,
+.language-python.highlighter-rouge .highlight .c1 {
+  color: #6a9955 !important;
+  font-style: italic;
+}
+
+/* ===== NÚMEROS ===== */
+.language-python.highlighter-rouge .highlight .m {
+  color: #b5cea8 !important;
+}
+
+/* ===== OPERADORES ===== */
+.language-python.highlighter-rouge .highlight .o {
+  color: #d4d4d4 !important;
+}
+
+/* ===== DECORADORES ===== */
+.language-python.highlighter-rouge .highlight .nd {
+  color: #c586c0 !important;
+}
+
+/* ===== PUNTUACIÓN ===== */
+.language-python.highlighter-rouge .highlight .p {
+  color: #d4d4d4 !important;
+}
+
+/* ============================= */
+/*        JAVASCRIPT             */
+/* ============================= */
+
+/* Texto base */
+.language-javascript .highlight span,
+.language-js .highlight span {
+  color: #d4d4d4 !important;
+}
+
+/* Keywords (function, return, if, etc.) */
+.language-javascript .highlight .kd,
+.language-javascript .highlight .k,
+.language-js .highlight .kd,
+.language-js .highlight .k {
+  color: #c586c0 !important;
+}
+
+/* Variables */
+.language-javascript .highlight .nx,
+.language-js .highlight .nx {
+  color: #9cdcfe !important;
+}
+
+/* Funciones */
+.language-javascript .highlight .nf,
+.language-js .highlight .nf {
+  color: #dcdcaa !important;
+}
+
+/* Strings */
+.language-javascript .highlight .s,
+.language-javascript .highlight .s1,
+.language-javascript .highlight .s2,
+.language-js .highlight .s,
+.language-js .highlight .s1,
+.language-js .highlight .s2 {
+  color: #ce9178 !important;
+}
+
+/* Números */
+.language-javascript .highlight .m,
+.language-js .highlight .m {
+  color: #b5cea8 !important;
+}
+
+/* Boolean / null */
+.language-javascript .highlight .kc,
+.language-js .highlight .kc {
+  color: #569cd6 !important;
+}
+
+/* Comentarios */
+.language-javascript .highlight .c,
+.language-javascript .highlight .c1,
+.language-js .highlight .c,
+.language-js .highlight .c1 {
+  color: #6a9955 !important;
+  font-style: italic;
+}
+
+/* Operadores */
+.language-javascript .highlight .o,
+.language-js .highlight .o {
+  color: #d4d4d4 !important;
+}
+
+/* Objetos / propiedades */
+.language-javascript .highlight .na,
+.language-js .highlight .na {
+  color: #4ec9b0 !important;
+}
