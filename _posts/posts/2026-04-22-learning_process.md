@@ -5,13 +5,15 @@ title: Learning Process
 description: "Modulo de HTB Academy | Tier 0"
 last_modified_at: false
 date: 2026-01-11 06:23:59 -500
-categories: [Certificaciones]
-tags: [Certificaciones, CJCA]
+categories: [Modulos-HTB]
+tags: [Modulos, Learning Process]
 home_image: banner
 banner:
   path: /assets/posts/proceso_de_aprendizaje.png
-  alt: "CJCA"
+  alt: "Learning Process"
 ---
+
+Solo te dire que no te estreses por entender cada detalle. Dale una ojeada a lo que no sirve, agarra lo que te sirva y síguele. Nomás quédate con lo que te ayude.
 
 ## Sección 1: Forma de pensar
 
@@ -230,3 +232,185 @@ Cuando hablamos de concentración, nos referimos a mantener nuestra atención en
 
 La seguridad de la información es un tema muy amplio, como ya hemos comentado. No podremos asimilar toda la información de golpe. Con frecuencia retomaremos algunos temas y repasaremos lo que nos falte. Esto es normal. Debemos aprender a distribuir nuestra atención.
 
+## Sección 16: Comfort
+
+Esta sección nos explica qué es la zona de confort y cómo influye en nuestro rendimiento y aprendizaje.
+
+La zona de confort es un estado mental donde nos sentimos seguros, tranquilos y sin riesgos. En este entorno ya tenemos experiencia, por lo que actuamos con confianza. Sin embargo, aunque es cómodo, no siempre es donde más crecemos. 
+Existe una idea clave (la ley de Yerkes-Dodson) que nos dice que nuestro rendimiento depende del nivel de estrés. 
+
+| Muy poco estrés   | Estamos pasivos o desmotivados     |
+| Estrés moderado   | Estamos concentrados y rendimos mejor |
+| Demasiado estrés  | Aparece el agotamiento o el pánico |
+
+Cuando salimos de nuestra zona de confort, entramos en lo desconocido. Esto genera inseguridad y puede afectar nuestra forma de pensar. Pero ahí es donde realmente aprendemos. 
+
+Curiosamente, los niños no tienen tanto miedo a esto. Ellos prueban cosas nuevas constantemente porque no temen equivocarse. Y eso es clave: equivocarse es parte esencial del aprendizaje.
+
+Podemos imaginarlo así:
+
+| Zona de confort      | Nos sentimos seguros           |
+| Zona de miedo        | Aparece la duda                |
+| Zona de aprendizaje  | Adquirimos habilidades         |
+| Zona de crecimiento  | Encontramos propósito          |
+
+> Si siempre nos quedamos en lo cómodo, avanzamos poco. Pero si nos atrevemos a salir, aunque dé miedo, empezamos a crecer más rápido de lo que pensamos.
+{: .prompt-info }
+
+## Sección 17: Obstáculos
+
+En esta sección entendemos que no solo necesitamos habilidades para avanzar, sino también aprender a gestionar los obstáculos mentales que nosotros mismos creamos.
+
+### Miedo
+
+Uno de los principales obstáculos es el miedo, pero no el miedo real (el que nos protege), sino el miedo imaginario: aquel que surge de lo que creemos que puede ocurrir en el futuro.
+
+> La gente teme lo que pueda suceder en el futuro sin tener en cuenta el presente.
+{: .prompt-tip }
+
+Muchas veces ni siquiera hemos intentado algo y ya asumimos que vamos a fracasar. Este tipo de miedo nos limita y nos impide avanzar.
+
+Por ello, es importante preguntarnos:
+`¿Cuáles de estas razones son realmente ciertas en este momento?`
+
+El fracaso no es un error que debamos evitar, sino una parte esencial del aprendizaje. Nadie adquiere una habilidad sin equivocarse. Cada error aporta experiencia y facilita enfrentar situaciones similares en el futuro con mayor preparación.
+
+El verdadero problema aparece cuando nos detenemos y renunciamos en ese punto.
+
+### Mentalidad
+
+Otro obstáculo importante es nuestra forma de pensar. Expresiones como:
+
+- `No puedo`
+- `Esto no es para mí`
+- `No entiendo esto`
+
+son creencias limitantes.
+
+Un recurso simple para transformarlas es añadir la palabra:
+`todavía`
+
+- `No puedo` → `Todavía no puedo`
+- `No entiendo` → `Todavía no entiendo`
+
+Este cambio modifica la perspectiva y abre la posibilidad de mejora.
+
+A continuación, se presentan conceptos relacionados:
+
+| Concepto | Definición |
+|----------|------------|
+| Talento  | Habilidad muy desarrollada y eficiente |
+| Habilidad | Capacidad de realizar o resolver algo correctamente |
+| Pasión   | Compromiso emocional con un área específica |
+
+Estos elementos no se excluyen, sino que se complementan.
+
+Es importante recordar que los obstáculos emocionales son temporales, mientras que las metas permanecen.
+
+### Presión
+
+La presión puede ser de dos tipos:
+
+- Interna: lo que pensamos sobre nosotros mismos
+- Externa: lo que otros opinan o esperan
+
+Ambas pueden influir en nuestro rendimiento. Sin embargo, contar con un objetivo claro reduce significativamente su impacto.
+
+> Solo quien haya recorrido exactamente el mismo camino que tú puede evaluarte a ti y a tus decisiones. Todo lo demás son meras suposiciones.
+{: .prompt-info }
+
+
+## Sección 18: Formulación de preguntas
+
+Aprender a formular preguntas es una habilidad clave. No se trata solo de buscar respuestas, sino de saber qué preguntar. En muchos casos, cuando la pregunta es correcta, la respuesta deja de ser difícil.
+
+> Lo más importante no es buscar la respuesta correcta, sino la pregunta correcta.
+
+Las preguntas orientan nuestro pensamiento y nos permiten entender mejor una situación. A través de ellas identificamos qué sabemos, qué nos falta y cuál debe ser nuestro siguiente paso. Por eso, son una parte esencial del aprendizaje.
+
+Existe una idea equivocada muy común: creer que hay preguntas `buenas` y `malas`. En realidad, esa clasificación no influye en la respuesta. Lo que realmente importa es el nivel de precisión. Una pregunta general suele generar respuestas amplias o poco útiles, mientras que una pregunta precisa permite obtener información más clara y aplicable.
+
+| Tipo     | Ejemplo |
+|----------|--------|
+| General  | ¿Cómo hackear un sistema? |
+| Precisa  | ¿Cómo usar SMB para enumerar usuarios en un servidor? |
+
+Las preguntas funcionan como una guía. Nos ayudan a conectar la información que ya conocemos con aquello que necesitamos descubrir, permitiéndonos construir una visión más completa del problema. Es similar a una receta: tener los ingredientes no es suficiente si no sabemos cómo usarlos; las preguntas cumplen ese papel.
+
+También es importante entender que las preguntas dependen del objetivo. Podemos formularlas para comprender una causa, analizar un proceso o anticipar un resultado. Mientras más clara sea la meta, más clara será la pregunta.
+
+Para estructurar mejor una pregunta, podemos considerar algunos componentes básicos:
+
+| Componente         | Descripción                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| Your Position      | Esto describe la posición en la que nos encontramos y nuestra perspectiva. |
+| The Object | El objeto es el elemento central de la pregunta. Define el tema principal y le da sentido a la pregunta. |
+| Known              | Esta información nos es conocida.                                           |
+| Unknown            | No disponemos de esta información.                                          |
+| Other Position(s)  | Este componente describe la posición de otras personas.                     |
+
+En la práctica, formular buenas preguntas implica reflexionar, ajustar y mejorar constantemente. Si una pregunta no conduce a una respuesta clara, es necesario reformularla. Cuestionar, analizar y no limitarse a copiar soluciones son aspectos clave para aprender de manera efectiva.
+
+En resumen, hacer buenas preguntas no es un detalle menor, sino una herramienta fundamental. Mientras más claras y precisas sean, mejor comprenderemos los problemas y más cerca estaremos de encontrar soluciones. Preguntar bien es, en esencia, pensar mejor.
+
+### Claves prácticas
+
+- Hacer muchas preguntas mejora la comprensión  
+- Si no hay respuesta clara debemos reformular la pregunta  
+- No copiar soluciones sin entenderlas  
+- Practicar constantemente el cuestionamiento  
+- Cuestionar incluso definiciones y conceptos  
+
+
+## Sección 19: Cómo manejar la frustración
+
+La frustración es una reacción emocional ante un evento, situación o condición que se manifiesta como decepción o impotencia. Generalmente, este sentimiento varía en intensidad según las expectativas o los deseos.
+
+Cada persona tiene un nivel de tolerancia a la frustración individual. Por ello, quienes tienen una baja tolerancia a la frustración tienden a rendirse o abandonar rápidamente ante una resistencia inesperada o cuando el éxito esperado no se produce en un plazo determinado. Como consecuencia, aumentan la tendencia al estrés y a la evitación, e incluso pueden manifestarse reacciones agresivas.
+
+Para expresar la tolerancia a la frustración de esta manera, es fundamental saber de dónde proviene. Veamos el siguiente diagrama:
+
+![alt text](assets/img/seccion1.19.png){: w="800" h="800" }
+
+Dado que aquí hablamos de frustración, podemos ver en el diagrama que, en este caso, nos faltan algunos recursos que nos frustran. En seguridad informática y pentesting, este tipo de recursos suelen ser información con la que tenemos que trabajar.  Si no contamos con las habilidades necesarias, sentiremos ansiedad, lo que nos lleva de nuevo al tema de la comodidad y la zona de confort. 
+
+La tolerancia a la frustración se puede entrenar:
+
+- Exponiéndonos a situaciones difíciles de forma controlada  
+- Aceptando que el error es parte del proceso  
+- Entendiendo que la frustración es temporal  
+
+
+## Sección 20: Progreso del aprendizaje
+
+El progreso en el aprendizaje consiste en comparar lo que sabíamos antes con lo que sabemos ahora, a lo largo del tiempo. Es una forma de verificar si realmente estamos avanzando.
+
+### Ideas clave
+
+- El progreso es personal: solo nosotros sabemos cuánto hemos avanzado  
+- Otros no pueden evaluarlo con precisión si no han recorrido el mismo camino  
+- Avanzar implica esfuerzo constante, incluso si es lento  
+
+### Ejemplo importante
+
+Pequeñas mejoras diarias generan grandes resultados:
+
+- (1.00)³⁶⁵ = 1.00  
+- (1.01)³⁶⁵ ≈ 37.7  
+
+Un 1% de mejora diaria hace una gran diferencia a largo plazo.
+
+> La rapidez con la que queramos alcanzar una altura determinada depende enteramente de nuestra ambición. El hecho de dar un paso al día o diez pasos al día solo influye en la duración.
+{: .prompt-info }
+
+### Cómo medir el progreso
+
+**Lista 1 (inicio):**
+En la primera lista, anota la fecha actual y todo lo que sabes sobre el tema que te interesa, incluyendo tus habilidades, con una escala del 1 al 10. Intenta que sea lo más detallada posible. Cuanto más detallada sea, más clara será la diferencia que podrás apreciar más adelante. Cuando creas que la lista está lista, anótala o guárdala de forma que puedas consultarla incluso después de un año.
+
+**Lista 2 (proceso):**
+La segunda lista se actualiza continuamente. Esto significa que, en cuanto te familiarices con un tema y aprendas algo nuevo, lo añadirás a la lista. Intenta aprender cada día, aunque solo te lleve 10 minutos. Si quieres obtener mejores resultados de forma más sistemática, registra las semanas del calendario.
+
+## Conclusión
+
+![alt text](assets/img/seccion1.final.png){: w="600" h="600" }
