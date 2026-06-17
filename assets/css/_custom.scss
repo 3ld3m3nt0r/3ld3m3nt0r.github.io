@@ -52,3 +52,48 @@
 .htb-locked {
   transition: opacity 0.3s ease;
 }
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.modal-content {
+  background: #2a2a2e;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+}
+.lock-gif {
+  max-width: 300px;
+  border-radius: 8px;
+}
+.modal-title {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.explain-text {
+  color: #aaa;
+}
+.contrasenta {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1b1b1e;
+  color: white;
+  margin: 1rem 0;
+}
+.decrypt-btn {
+  width: 100%;
+  padding: 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
