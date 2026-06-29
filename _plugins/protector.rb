@@ -40,14 +40,14 @@ Dir.glob('_site/**/*.html').each do |post_path|
   doc  = Nokogiri::HTML(html)
 
   # -----------------------------
-  # Detectar categoría Protect (robusto)
+  # DETECCIÓN ROBUSTA (FIX NOKOGIRI ERROR)
   # -----------------------------
-  is_protected = doc.css('a[href*="protect" i]').any?
+  is_protected = doc.xpath('//a[contains(@href, "protect")]').any?
 
   next unless is_protected
 
   # -----------------------------
-  # Buscar contenido real del post
+  # Buscar contenido del post
   # -----------------------------
   content_node =
     doc.at_css('div.content') ||
@@ -65,12 +65,13 @@ Dir.glob('_site/**/*.html').each do |post_path|
   encrypted_js = encrypted.to_json
 
   # -----------------------------
-  # Bloque protegido
+  # BLOQUE PROTEGIDO (FRONTEND)
   # -----------------------------
   protected_block = <<~HTML
     <div class="content">
       <div id="protected"></div>
 
+      <!-- Modal -->
       <div id="decryptModal" class="modal">
         <div class="modal-content">
           <div class="lock-icon">🔒</div>
@@ -149,6 +150,9 @@ Dir.glob('_site/**/*.html').each do |post_path|
         }
 
         document.getElementById("decryptButton").onclick = decrypt;
+        document.getElementById("password").addEventListener("keyup", e => {
+          if (e.key === "Enter") decrypt();
+        });
       </script>
     </div>
   HTML
