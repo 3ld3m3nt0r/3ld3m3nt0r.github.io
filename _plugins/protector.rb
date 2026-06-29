@@ -4,10 +4,11 @@ require 'openssl'
 require 'nokogiri'
 require 'json'
 
+# -----------------------------
+# AES-256-CBC + HMAC
+# -----------------------------
 def aes256_encrypt(password, cleardata)
-  digest = Digest::SHA256.new
-  digest.update(password)
-  key = digest.digest
+  key = Digest::SHA256.digest(password)
 
   cipher = OpenSSL::Cipher::AES256.new(:CBC)
   cipher.encrypt
@@ -15,39 +16,69 @@ def aes256_encrypt(password, cleardata)
   cipher.iv = iv = cipher.random_iv
 
   encrypted = cipher.update(cleardata) + cipher.final
-  encoded_msg = Base64.encode64(encrypted).gsub(/\n/, '')
-  encoded_iv = Base64.encode64(iv).gsub(/\n/, '')
 
-  hmac = Base64.encode64(OpenSSL::HMAC.digest('sha256', key, encoded_msg)).strip
+  encoded_msg = Base64.encode64(encrypted).delete("\n")
+  encoded_iv  = Base64.encode64(iv).delete("\n")
+
+  hmac = Base64.encode64(
+    OpenSSL::HMAC.digest('sha256', key, encoded_msg)
+  ).strip
+
   "#{encoded_iv}|#{hmac}|#{encoded_msg}"
 end
 
-Dir.glob('_site/posts/*/index.html').each do |post_path|
+# -----------------------------
+# Procesar HTML generado por Jekyll
+# -----------------------------
+Dir.glob('_site/**/*.html').each do |post_path|
+
+  puts "Procesando: #{post_path}"
+
   password = ENV['PROTECTOR_PASSWORD'] || "debug"
 
   html = File.read(post_path)
-  next unless html.include?('<a href="/categories/protect/">Protect</a>') # searching for protected category
-  doc = Nokogiri::HTML(html)
-  content_node = doc.at_css('div.content')
+  doc  = Nokogiri::HTML(html)
+
+  # -----------------------------
+  # Detectar categoría Protect (robusto)
+  # -----------------------------
+  is_protected = doc.css('a[href*="protect" i]').any?
+
+  next unless is_protected
+
+  # -----------------------------
+  # Buscar contenido real del post
+  # -----------------------------
+  content_node =
+    doc.at_css('div.content') ||
+    doc.at_css('article') ||
+    doc.at_css('main')
+
   next unless content_node
 
-  content_to_encrypt = content_node.inner_html
-  encrypted = aes256_encrypt(password, content_to_encrypt)
-  encrypted_js = encrypted.to_json  # safe for JS
+  # Evitar doble cifrado
+  next if html.include?('id="protected"')
 
+  content_to_encrypt = content_node.inner_html
+
+  encrypted = aes256_encrypt(password, content_to_encrypt)
+  encrypted_js = encrypted.to_json
+
+  # -----------------------------
+  # Bloque protegido
+  # -----------------------------
   protected_block = <<~HTML
     <div class="content">
       <div id="protected"></div>
 
-      <!-- Modal -->
       <div id="decryptModal" class="modal">
         <div class="modal-content">
           <div class="lock-icon">🔒</div>
-          <h2 class="modal-title">This post is locked</h2>
+          <h2 class="modal-title">Contenido bloqueado</h2>
           <p class="explain-text">
-            This content is protected. Enter the correct password to unlock it.
+            Ingresa la contraseña para desbloquear el contenido.
           </p>
-          <input id="password" type="password" placeholder="Enter password">
+          <input id="password" type="password" placeholder="Password">
           <button id="decryptButton" class="decrypt-btn">Unlock</button>
           <p id="errmsg" style="color: red; margin-top: 10px;"></p>
         </div>
@@ -60,51 +91,57 @@ Dir.glob('_site/posts/*/index.html').each do |post_path|
           const bin = atob(b64);
           return new Uint8Array([...bin].map(c => c.charCodeAt(0)));
         }
-        function bytesToBase64(bytes) {
-          return btoa(String.fromCharCode(...new Uint8Array(bytes)));
-        }
 
         async function decrypt() {
           const [ivB64, hmacB64, cipherB64] = protectedContent.split("|");
           const password = document.getElementById('password').value;
 
-          // Hash password (SHA-256)
-          const pwKey = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(password));
+          const pwKey = await crypto.subtle.digest(
+            "SHA-256",
+            new TextEncoder().encode(password)
+          );
 
-          // Verify HMAC
-          const keyForHmac = await crypto.subtle.importKey("raw", pwKey, {name:"HMAC", hash:"SHA-256"}, false, ["sign"]);
-          const computedHmac = await crypto.subtle.sign("HMAC", keyForHmac, new TextEncoder().encode(cipherB64));
-          if (bytesToBase64(computedHmac).trim() !== hmacB64.trim()) {
-            const errmsg = document.getElementById('errmsg');
-            errmsg.innerText = "Wrong password";
-            errmsg.classList.remove("shake");
-            void errmsg.offsetWidth; 
-            errmsg.classList.add("shake");
+          const keyForHmac = await crypto.subtle.importKey(
+            "raw",
+            pwKey,
+            { name: "HMAC", hash: "SHA-256" },
+            false,
+            ["sign"]
+          );
+
+          const computedHmac = await crypto.subtle.sign(
+            "HMAC",
+            keyForHmac,
+            new TextEncoder().encode(cipherB64)
+          );
+
+          const b64 = btoa(String.fromCharCode(...new Uint8Array(computedHmac)));
+
+          if (b64.trim() !== hmacB64.trim()) {
+            document.getElementById('errmsg').innerText = "Wrong password";
             return;
           }
 
-          // Import AES key
-          const aesKey = await crypto.subtle.importKey("raw", pwKey, {name:"AES-CBC"}, false, ["decrypt"]);
+          const aesKey = await crypto.subtle.importKey(
+            "raw",
+            pwKey,
+            { name: "AES-CBC" },
+            false,
+            ["decrypt"]
+          );
 
-          // Decrypt
           const decrypted = await crypto.subtle.decrypt(
-            {name: "AES-CBC", iv: base64ToBytes(ivB64)},
+            { name: "AES-CBC", iv: base64ToBytes(ivB64) },
             aesKey,
             base64ToBytes(cipherB64)
           );
 
           const content = new TextDecoder().decode(decrypted);
+
           document.getElementById('protected').innerHTML = content;
 
-          // Remove shimmer class
-          document.querySelectorAll('#protected .shimmer').forEach(el => el.classList.remove('shimmer'));
+          document.getElementById('decryptModal').style.display = "none";
 
-          // Hide modal
-          const modal = document.getElementById('decryptModal');
-          modal.classList.add("hide");
-          setTimeout(() => { modal.style.display = "none"; }, 800);
-          
-          // reload toc content
           if (window.tocbot) {
             tocbot.refresh();
             tocbot.collapseAll();
@@ -112,9 +149,6 @@ Dir.glob('_site/posts/*/index.html').each do |post_path|
         }
 
         document.getElementById("decryptButton").onclick = decrypt;
-        document.getElementById("password").addEventListener("keyup", e => {
-          if (e.key === "Enter") decrypt();
-        });
       </script>
     </div>
   HTML
