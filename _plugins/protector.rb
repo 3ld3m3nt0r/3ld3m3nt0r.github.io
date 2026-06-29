@@ -75,9 +75,9 @@ Dir.glob('_site/posts/**/*.html').each do |post_path|
       <div id="decryptModal" class="modal">
         <div class="modal-content">
           <div class="lock-icon">🔒</div>
-          <h2 class="modal-title">Contenido bloqueado</h2>
+          <h2 class="modal-title">This post is locked</h2>
           <p class="explain-text">
-            Ingresa la contraseña para desbloquear el contenido.
+            This content is protected. Enter the correct password to unlock it.
           </p>
           <input id="password" type="password" placeholder="Password">
           <button id="decryptButton" class="decrypt-btn">Unlock</button>
