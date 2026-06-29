@@ -26,7 +26,7 @@ Dir.glob('_site/posts/*/index.html').each do |post_path|
   password = ENV['PROTECTOR_PASSWORD'] || "debug"
 
   html = File.read(post_path)
-  next unless html.include?('<a href="/categories/Protect/">Protect</a>') # searching for protected category
+  next unless html.include?('<a href="/categories/protect/">Protect</a>') # searching for protected category
   doc = Nokogiri::HTML(html)
   content_node = doc.at_css('div.content')
   next unless content_node
