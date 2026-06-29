@@ -40,7 +40,7 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
-      - name: Setup Python # 👈 NUEVO
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
@@ -49,9 +49,9 @@ jobs:
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
-          PROTECTOR_PASSWORD: ${{ secrets.PROTECTOR_PASSWORD }} # 👈 NUEVO
+          PROTECTOR_PASSWORD: ${{ secrets.PROTECTOR_PASSWORD }}
 
-      - name: Run protector # 👈 NUEVO
+      - name: Run protector
         run: bundle exec ruby _plugins/protector.rb
         env:
           PROTECTOR_PASSWORD: ${{ secrets.PROTECTOR_PASSWORD }}
