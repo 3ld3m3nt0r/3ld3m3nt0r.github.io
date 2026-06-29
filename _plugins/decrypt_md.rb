@@ -30,7 +30,7 @@ def aes_decrypt(password, enc)
   plaintext
 end
 
-Dir.glob("_posts/*.md").each do |path|
+Dir.glob("_posts/**/*.md").each do |path|
   first_line = File.open(path, &:readline).strip rescue ""
   next unless first_line.start_with?("ciphertext:")
 

@@ -71,7 +71,7 @@ def encrypt_md_file(path: Path):
         yaml.dump(encrypted, f, sort_keys=False)
 
 def main():
-    for md_file in Path(POSTS_DIR).glob("*.md"):
+    for md_file in Path(POSTS_DIR).rglob("*.md"):
         encrypt_md_file(md_file)
 
 if __name__ == "__main__":
