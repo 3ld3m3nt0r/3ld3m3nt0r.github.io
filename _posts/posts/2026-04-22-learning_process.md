@@ -12,8 +12,7 @@ banner:
   path: /assets/posts/proceso_de_aprendizaje.png
   alt: "Learning Process"
 ---
-
-Solo te dire que no te estreses por entender cada detalle. Dale una ojeada a lo que no sirve, agarra lo que te sirva y síguele. Nomás quédate con lo que te ayude.
+No te estreses por entender cada detalle. Dale una ojeada a lo que no sirve, agarra lo que te sirva y síguele. Nomás quédate con lo que te ayude.
 
 ## Sección 1: Forma de pensar
 
