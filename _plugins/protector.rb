@@ -30,7 +30,7 @@ end
 # -----------------------------
 # Procesar HTML generado por Jekyll
 # -----------------------------
-Dir.glob('_site/**/*.html').each do |post_path|
+Dir.glob('_site/posts/**/*.html').each do |post_path|
 
   puts "Procesando: #{post_path}"
 
