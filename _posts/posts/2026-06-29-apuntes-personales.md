@@ -1,4 +1,16 @@
-ciphertext: Nr0lRt8Mlgtv+23Xqlwx8YsZCwaY5w4KJaZnmE1VVaeHI9IJ6fuzxGaAqEBxl0JAqevdBdal0A4bupZpkrjEP1poPCILqrWfWd2cW3ZrpUCkvTYYa6ocJ51zK8oby9NS6v1rjLQUR7m9YVof4l8DtXJZTcTiWt9Hkm6CpLhAYPEnjFmh7pbRL2J13hhNMN0oI7omc1Oh+iyzfXVdDfpUYpilVsq4hGLxM1rRCGlf5gHCm+/xu6Oq65tAMFPFXshPJAyXijPy03mJOxrD59RGq0Mo8voiHAi+3AknAX7urr8hKHmBywMBqgkvUsD1nkNNMWOSQnFNFrXR9Uk+TIk7QpzkMF0RoWzkYGhj9JGOg7AUW2mH8jP2/yJVsjLPJEi/zRkLxTAfxNYzczwV0heDhQ==
-iv: txsxK2YaDwTeHo1rNzNUVQ==
-salt: RpQUYjfbWx/A4vamRi34Mw==
-hmac: UugFIYiDiUtMkZ4Z0GVG89CqGhp5AUhS5PnMKprsplM=
+---
+pin: true
+layout: post
+title: Apuntes personales
+last_modified_at: false
+date: 2026-01-11 06:23:59 -500
+categories: [Protect]
+tags: [Apuntes, Ray-Chipi]
+home_image: banner
+banner:
+  path: /assets/posts/apuntes.png
+  alt: "Learning Process"
+---
+
+> - RAY CHIPI RAY CHIPI RAY CHIPI
+{: .prompt-info }
