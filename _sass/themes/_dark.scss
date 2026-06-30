@@ -2,117 +2,178 @@
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: rgb(27, 27, 30);
-  --mask-bg: rgb(68, 69, 70);
-  --main-border-color: rgb(44, 45, 45);
+  --main-bg: rgb(5, 20, 8);
+  --mask-bg: rgb(30, 48, 34);
+  --main-border-color: rgba(57, 255, 20, 0.25); /* Más visible */
 
   /* Common color */
-  --text-color: rgb(175, 176, 177);
-  --text-muted-color: #868686;
-  --text-muted-highlight-color: #aeaeae;
-  --heading-color: #cccccc;
-  --label-color: #a7a7a7;
-  --blockquote-border-color: rgb(66, 66, 66);
-  --blockquote-text-color: #868686;
-  --link-color: rgb(138, 180, 248);
-  --link-underline-color: rgb(82, 108, 150);
-  --button-bg: #1e1e1e;
-  --btn-border-color: #2e2f31;
-  --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #212122;
-  --card-header-bg: #292929;
-  --checkbox-color: rgb(118, 120, 121);
-  --checkbox-checked-color: var(--link-color);
-  --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
+  --text-color: rgb(190, 192, 194); /* Un punto más brillante */
+  --text-muted-color: #9a9a9a;
+  --text-muted-highlight-color: #c5c5c5;
+  --heading-color: #e0e0e0;
+  --label-color: #b5b5b5;
+  --blockquote-border-color: rgb(
+    57,
+    255,
+    20,
+    0.5
+  ); /* Borde de bloque marcado */
+  --blockquote-text-color: #a0a0a0;
+  --link-color: #39ff14;
+  --link-underline-color: rgba(57, 255, 20, 0.5);
+  --button-bg: #0b110b;
+  --btn-border-color: rgba(57, 255, 20, 0.4); /* Bordes de botones corpóreos */
+  --btn-backtotop-color: #39ff14;
+  --btn-backtotop-border-color: rgba(57, 255, 20, 0.5);
+  --card-header-bg: rgba(12, 18, 12, 0.95);
+  --checkbox-color: #39ff14;
+  --checkbox-checked-color: #39ff14;
+  --img-bg: radial-gradient(circle, rgb(15, 30, 15) 0%, rgb(22, 30, 22) 100%);
   --shimmer-bg: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(58, 55, 55, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(57, 255, 20, 0.12) 50%,
+    rgba(255, 255, 255, 0) 100
   );
 
   /* Sidebar */
-  --site-title-color: #717070;
-  --site-subtitle-color: #868686;
-  --sidebar-bg: radial-gradient(circle, #251258 0%, #191425 100%);
-  --sidebar-border-color: #292929;
-  --sidebar-muted-color: #868686;
-  --sidebar-active-color: rgb(255, 255, 255, 0.95);
-  --sidebar-hover-bg: rgb(54, 54, 54, 0.33);
-  --sidebar-btn-bg: rgb(84, 83, 83, 0.3);
-  --sidebar-btn-color: #787878;
-  --avatar-border-color: rgb(206, 206, 206, 0.9);
+  --site-title-color: #39ff14;
+  --site-subtitle-color: #6eb06e;
+  --sidebar-bg: linear-gradient(
+    180deg,
+    #1f0a40 0%,
+    #0a1c0d 60%,
+    #050d05 100%
+  ); /* Ajustado para dar más peso */
+  --sidebar-border-color: rgba(57, 255, 20, 0.25);
+  --sidebar-muted-color: #6e946e;
+  --sidebar-active-color: #39ff14;
+  --sidebar-hover-bg: rgba(57, 255, 20, 0.12);
+  --sidebar-btn-bg: rgba(57, 255, 20, 0.15);
+  --sidebar-btn-color: #39ff14;
+  --avatar-border-color: rgba(
+    57,
+    255,
+    20,
+    0.85
+  ); /* Línea del avatar más gruesa visualmente */
 
   /* Topbar */
-  --topbar-bg: rgb(27, 27, 30, 0.64);
+  --topbar-bg: rgba(5, 15, 8, 0.85);
   --topbar-text-color: var(--text-color);
-  --search-border-color: rgb(55, 55, 55);
-  --search-icon-color: rgb(100, 102, 105);
-  --input-focus-border-color: rgb(112, 114, 115);
+  --search-border-color: rgba(57, 255, 20, 0.35);
+  --search-icon-color: #39ff14;
+  --input-focus-border-color: rgba(57, 255, 20, 0.8);
 
   /* Home page */
-  --post-list-text-color: rgb(175, 176, 177);
-  --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #2e2e2e;
+  --post-list-text-color: rgb(190, 192, 194);
+  --btn-patinator-text-color: #39ff14;
+  --btn-paginator-hover-color: rgba(57, 255, 20, 0.15);
 
   /* Posts */
-  --toc-highlight: rgb(116, 178, 243);
-  --toc-popup-border-color: #373737;
-  --tag-hover: rgb(43, 56, 62);
-  --tb-odd-bg: #252526; /* odd rows of the posts' table */
-  --tb-even-bg: rgb(31, 31, 34); /* even rows of the posts' table */
-  --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: rgb(63, 81, 181);
-  --btn-share-color: #6c757d;
-  --btn-share-hover-color: #bfc1ca;
-  --card-bg: #1e1e1e;
-  --card-hovor-bg: #464d51;
+  --toc-highlight: #39ff14;
+  --toc-popup-border-color: rgba(57, 255, 20, 0.35);
+  --tag-hover: rgba(57, 255, 20, 0.15);
+  --tb-odd-bg: rgba(18, 26, 18, 0.85);
+  --tb-even-bg: rgba(12, 20, 24, 0.85);
+  --tb-border-color: rgba(57, 255, 20, 0.2);
+  --footnote-target-bg: rgba(57, 255, 20, 0.2);
+  --btn-share-color: #6eb06e;
+  --btn-share-hover-color: #39ff14;
+
+  /* Tarjetas con más cuerpo y sombra densa */
+  --card-bg: rgba(12, 18, 22, 0.85);
+  --card-hovor-bg: rgba(57, 255, 20, 0.08);
   --card-shadow:
-    rgb(21, 21, 21, 0.72) 0 6px 18px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
-  --kbd-wrap-color: #6a6a6a;
-  --kbd-text-color: #d3d3d3;
-  --kbd-bg-color: #242424;
-  --prompt-text-color: rgb(216, 212, 212, 0.75);
-  --prompt-tip-bg: rgb(22, 60, 36, 0.64);
-  --prompt-tip-icon-color: rgb(15, 164, 15, 0.81);
-  --prompt-info-bg: rgb(7, 59, 104, 0.8);
-  --prompt-info-icon-color: #0075d1;
-  --prompt-warning-bg: rgb(90, 69, 3, 0.88);
-  --prompt-warning-icon-color: rgb(255, 165, 0, 0.8);
-  --prompt-danger-bg: rgb(86, 28, 8, 0.8);
-  --prompt-danger-icon-color: #cd0202;
+    rgba(0, 0, 0, 0.85) 0 8px 24px 0, rgba(57, 255, 20, 0.25) 0 0 0 2px; /* Doble grosor en el borde del contenedor */
+
+  --kbd-wrap-color: rgba(57, 255, 20, 0.4);
+  --kbd-text-color: #e0e0e0;
+  --kbd-bg-color: rgba(18, 26, 18, 0.9);
+  --prompt-text-color: rgba(230, 225, 225, 0.85);
+  --prompt-tip-bg: rgba(22, 60, 36, 0.8);
+  --prompt-tip-icon-color: #39ff14;
+  --prompt-info-bg: rgba(7, 59, 104, 0.9);
+  --prompt-info-icon-color: #0084ff;
+  --prompt-warning-bg: rgba(90, 69, 3, 0.95);
+  --prompt-warning-icon-color: rgb(255, 180, 20);
+  --prompt-danger-bg: rgba(100, 32, 10, 0.9);
+  --prompt-danger-icon-color: #ff2a2a;
 
   /* Tags */
-  --tag-border: rgb(59, 79, 88);
-  --tag-shadow: rgb(32, 33, 33);
-  --dash-color: rgb(63, 65, 68);
-  --search-tag-bg: #292828;
+  --tag-border: rgba(57, 255, 20, 0.45);
+  --tag-shadow: rgba(57, 255, 20, 0.1);
+  --dash-color: rgba(57, 255, 20, 0.25);
+  --search-tag-bg: rgba(57, 255, 20, 0.12);
 
   /* Categories */
-  --categories-border: rgb(64, 66, 69, 0.5);
-  --categories-hover-bg: rgb(73, 75, 76);
-  --categories-icon-hover-color: white;
+  --categories-border: rgba(57, 255, 20, 0.3);
+  --categories-hover-bg: rgba(57, 255, 20, 0.12);
+  --categories-icon-hover-color: #39ff14;
+
+  /* Degradado para categorías */
+  --categories-gradient: linear-gradient(
+    180deg,
+    rgba(12, 24, 15, 0.9) 0%,
+    rgba(15, 32, 22, 0.85) 50%,
+    rgba(24, 12, 36, 0.9) 100
+  );
 
   /* Archive */
-  --timeline-node-bg: rgb(150, 152, 156);
-  --timeline-color: rgb(63, 65, 68);
-  --timeline-year-dot-color: var(--timeline-color);
+  --timeline-node-bg: #39ff14;
+  --timeline-color: rgba(57, 255, 20, 0.35);
+  --timeline-year-dot-color: #22cc0a;
 
   /* Code highlight colors */
-  --language-border-color: #2d2d2d;
-  --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #c9def1;
-  --highlight-lineno-color: #808080;
-  --inline-code-bg: rgba(255, 255, 255, 0.05);
-  --code-color: #b0b0b0;
-  --code-header-text-color: #6a6a6a;
-  --code-header-muted-color: #353535;
-  --code-header-icon-color: #565656;
-  --clipboard-checked-color: #2bcc2b;
-  --filepath-text-color: #cacaca;
+  --language-border-color: rgba(57, 255, 20, 0.3);
+  --highlight-bg-color: rgba(8, 15, 8, 0.95);
+  --highlighter-rouge-color: #39ff14;
+  --highlight-lineno-color: #4a824a;
+  --inline-code-bg: rgba(57, 255, 20, 0.12);
+  --code-color: #bce6bc;
+  --code-header-text-color: #6eb06e;
+  --code-header-muted-color: #112211;
+  --code-header-icon-color: #39ff14;
+  --clipboard-checked-color: #39ff14;
+  --filepath-text-color: #bce6bc;
 
   .light {
     display: none;
+  }
+
+  /* Degradado base */
+  body {
+    background: linear-gradient(
+        135deg,
+        rgb(4, 15, 6) 0%,
+        rgb(6, 12, 9) 35%,
+        rgb(14, 6, 22) 65%,
+        rgb(20, 4, 32) 100
+      )
+      fixed !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+  }
+
+  #main-wrapper {
+    background: transparent !important;
+  }
+
+  #topbar-wrapper {
+    background: rgba(5, 15, 8, 0.85) !important;
+    border-bottom: 2px solid rgba(57, 255, 20, 0.25); /* Añadido cierre robusto abajo */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Tarjetas sólidas con bordes marcados */
+  .card,
+  .post-preview {
+    background: rgba(12, 18, 22, 0.85) !important;
+    border: 2px solid rgba(57, 255, 20, 0.2) !important; /* Bordes reales de 2px */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: var(--card-shadow) !important;
   }
 
   /* Categories */
@@ -124,6 +185,7 @@
   .categories {
     .card-header {
       background-color: var(--card-header-bg);
+      border-bottom: 2px solid var(--categories-border);
     }
 
     .list-group-item {
@@ -131,6 +193,7 @@
       border-right: none;
       padding-left: 2rem;
       border-color: var(--categories-border);
+      border-bottom-width: 1.5px;
 
       &:last-child {
         border-bottom-color: var(--card-bg);
@@ -141,42 +204,38 @@
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      rgb(26, 26, 30),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(26, 26, 30)
+      rgba(8, 13, 9, 0.8),
+      rgba(15, 22, 15, 0.8),
+      rgba(15, 22, 15, 0.8),
+      rgba(15, 22, 15, 0.8),
+      rgba(8, 13, 9, 0.8)
     );
   }
 
-  /* stylelint-disable-next-line selector-id-pattern */
   #disqus_thread {
     color-scheme: none;
   }
 
-  /* --- Syntax highlight theme from `rougify style base16.dark` --- */
-
+  /* --- Syntax highlight theme --- */
   .highlight .gp {
-    color: #87939d;
+    color: #6eb06e;
   }
-
   .highlight table td {
-    padding: 5px;
+    padding: 6px;
   }
-
   .highlight table pre {
     margin: 0;
   }
 
   .highlight,
   .highlight .w {
-    color: #d0d0d0;
-    background-color: #151515;
+    color: #d8e8d8;
+    background-color: rgba(8, 15, 8, 0.95);
   }
 
   .highlight .err {
-    color: #151515;
-    background-color: #ac4142;
+    color: #0d120d;
+    background-color: #bd4c4e;
   }
 
   .highlight .c,
@@ -186,39 +245,36 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #848484;
+    color: #5a945a; /* Comentarios un poco más legibles */
   }
 
   .highlight .cp {
-    color: #f4bf75;
+    color: #39ff14;
   }
-
   .highlight .nt {
-    color: #f4bf75;
-  }
-
+    color: #39ff14;
+    font-weight: bold;
+  } /* Elementos HTML gruesos */
   .highlight .o,
   .highlight .ow {
-    color: #d0d0d0;
+    color: #d8e8d8;
   }
-
   .highlight .p,
   .highlight .pi {
-    color: #d0d0d0;
+    color: #d8e8d8;
   }
-
   .highlight .gi {
-    color: #90a959;
+    color: #39ff14;
   }
 
   .highlight .gd {
-    color: #f08a8b;
-    background-color: #320000;
+    color: #fca1a2;
+    background-color: #420000;
   }
 
   .highlight .gh {
-    color: #6a9fb5;
-    background-color: #151515;
+    color: #22cc0a;
+    background-color: rgba(8, 15, 8, 0.95);
     font-weight: bold;
   }
 
@@ -227,19 +283,19 @@
   .highlight .kp,
   .highlight .kr,
   .highlight .kv {
-    color: #aa759f;
+    color: #bd8cb2;
+    font-weight: bold; /* Keywords en negrita para dar masa */
   }
 
   .highlight .kc {
-    color: #d28445;
+    color: #e29455;
   }
-
   .highlight .kt {
-    color: #d28445;
+    color: #e29455;
   }
-
   .highlight .kd {
-    color: #d28445;
+    color: #e29455;
+    font-weight: bold;
   }
 
   .highlight .s,
@@ -251,39 +307,33 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #90a959;
+    color: #2ee617;
   }
 
   .highlight .sa {
-    color: #aa759f;
+    color: #bd8cb2;
   }
-
   .highlight .sr {
-    color: #75b5aa;
+    color: #39ff14;
   }
-
   .highlight .si {
-    color: #b76d45;
+    color: #c77d55;
   }
-
   .highlight .se {
-    color: #b76d45;
+    color: #c77d55;
   }
-
   .highlight .nn {
-    color: #f4bf75;
+    color: #39ff14;
   }
-
   .highlight .nc {
-    color: #f4bf75;
+    color: #39ff14;
+    font-weight: bold;
   }
-
   .highlight .no {
-    color: #f4bf75;
+    color: #2ee617;
   }
-
   .highlight .na {
-    color: #6a9fb5;
+    color: #6bcf6b;
   }
 
   .highlight .m,
@@ -294,10 +344,10 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #90a959;
+    color: #2ee617;
   }
 
   .highlight .ss {
-    color: #90a959;
+    color: #39ff14;
   }
 }
