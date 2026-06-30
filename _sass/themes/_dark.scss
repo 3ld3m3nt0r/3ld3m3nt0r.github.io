@@ -87,30 +87,14 @@
   --prompt-text-color: rgba(220, 245, 220, 0.9);
 
   /* Bloques informativos hiper-degradados */
-  --prompt-tip-bg: linear-gradient(
-    135deg,
-    rgba(6, 35, 10, 0.9) 0%,
-    rgba(20, 5, 40, 0.8) 100%
-  );
-  --prompt-tip-icon-color: #39ff14;
-  --prompt-info-bg: linear-gradient(
-    135deg,
-    rgba(5, 20, 35, 0.9) 0%,
-    rgba(30, 5, 50, 0.8) 100%
-  );
+  --prompt-tip-bg: rgb(123, 247, 144, 0.2);
+  --prompt-info-icon-color: #0075d1;
+  --prompt-info-bg: rgba(7, 59, 104, 0.95);
   --prompt-info-icon-color: #00bfff;
-  --prompt-warning-bg: linear-gradient(
-    135deg,
-    rgba(50, 30, 0, 0.95) 0%,
-    rgba(35, 5, 10, 0.9) 100%
-  );
-  --prompt-warning-icon-color: #ffcc00;
-  --prompt-danger-bg: linear-gradient(
-    135deg,
-    rgba(55, 10, 15, 0.95) 0%,
-    rgba(35, 0, 50, 0.95) 100%
-  );
-  --prompt-danger-icon-color: #ff0055;
+  --prompt-warning-bg: rgb(90, 69, 3, 0.88);
+  --prompt-warning-icon-color: rgb(255, 165, 0, 0.8);
+  --prompt-danger-bg: rgb(86, 28, 8, 0.8);
+  --prompt-danger-icon-color: #cd0202;
 
   /* Tags */
   --tag-border: rgba(57, 255, 20, 0.6);
