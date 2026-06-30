@@ -2,7 +2,6 @@
 pin: true
 layout: post
 title: Learning Process
-description: "Modulo de HTB Academy | Tier 0"
 last_modified_at: false
 date: 2026-01-11 06:23:59 -500
 categories: [Modulos-HTB]

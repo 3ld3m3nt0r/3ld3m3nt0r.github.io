@@ -1,6 +1,5 @@
 ---
 title: "Javascript"
-description: "Apuntes de Javascript"
 tags: []
 date: 2026-01-11 06:22:58 -500
 categories: ["Lenguajes", "JS"]
