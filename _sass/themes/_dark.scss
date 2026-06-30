@@ -58,7 +58,7 @@
   --search-icon-color: #39ff14;
   --input-focus-border-color: #39ff14;
 
-  /* Home page */
+  /* Home page (Paginador) */
   --post-list-text-color: rgb(200, 230, 205);
   --btn-patinator-text-color: #39ff14;
   --btn-paginator-hover-color: rgba(57, 255, 20, 0.25);
@@ -88,7 +88,6 @@
 
   /* Bloques informativos hiper-degradados */
   --prompt-tip-bg: rgb(123, 247, 144, 0.2);
-  --prompt-info-icon-color: #0075d1;
   --prompt-info-bg: rgba(7, 59, 104, 0.95);
   --prompt-info-icon-color: #00bfff;
   --prompt-warning-bg: rgb(90, 69, 3, 0.88);
@@ -136,7 +135,7 @@
     display: none;
   }
 
-  /* Fondo ultra-degradado dinámico dominado por Verde Cíber */
+  /* Fondo ultra-degradado dinámico */
   body {
     background: linear-gradient(
         135deg,
@@ -161,7 +160,7 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
-  /* Tarjetas con degradado cruzado de alto impacto y bordes neón */
+  /* Tarjetas (Cards y previews de posts) con bordes neón */
   .card,
   .post-preview {
     background: linear-gradient(
@@ -175,34 +174,171 @@
     box-shadow: var(--card-shadow) !important;
   }
 
-  /* Categories */
-  .categories.card,
-  .list-group-item {
-    background: linear-gradient(
-      135deg,
-      rgba(6, 22, 10, 0.92) 0%,
-      rgba(20, 8, 34, 0.92) 100%
-    ) !important;
-  }
+  /* --- MODIFICACIÓN ADICIONAL: MENU LATERAL (SIDEBAR NAV) --- */
+  #sidebar #nav-wrapper .nav-item {
+    margin-bottom: 0.75rem; /* Separación entre botones */
+    padding: 0 1rem;
 
-  .categories {
-    .card-header {
-      background: rgba(5, 18, 7, 0.96);
-      border-bottom: 2px solid var(--categories-border);
+    .nav-link {
+      background: rgba(6, 25, 10, 0.85) !important;
+      border: 2px solid rgba(57, 255, 20, 0.5) !important;
+      color: #72ef62 !important; /* Texto verde por defecto */
+      border-radius: 8px !important;
+      padding: 0.6rem 1rem !important;
+      font-weight: bold !important;
+      display: flex;
+      align-items: center;
+      transition: all 0.25s ease-in-out !important;
+      box-shadow:
+        0 0 10px rgba(57, 255, 20, 0.2),
+        inset 0 0 8px rgba(6, 25, 10, 0.5);
+
+      /* Iconos dentro del menú lateral */
+      i {
+        color: #39ff14 !important;
+        margin-right: 0.75rem;
+        text-shadow: 0 0 8px #39ff14;
+      }
+
+      span {
+        letter-spacing: 0.05em;
+      }
     }
 
-    .list-group-item {
-      border-left: none;
-      border-right: none;
-      padding-left: 2rem;
-      border-color: var(--categories-border);
-      border-bottom-width: 2px;
+    /* Estado Hover (Pasar el ratón) */
+    &:hover .nav-link {
+      background: rgba(57, 255, 20, 0.15) !important;
+      color: #ffffff !important;
+      border-color: #39ff14 !important;
+      box-shadow:
+        0 0 18px rgba(57, 255, 20, 0.65),
+        inset 0 0 10px rgba(57, 255, 20, 0.2) !important;
+      transform: scale(1.02);
 
-      &:last-child {
-        border-bottom-color: transparent;
+      i {
+        color: #ffffff !important;
+        text-shadow: 0 0 12px #39ff14;
+      }
+    }
+
+    /* Botón Activo (Página actual) */
+    &.active .nav-link {
+      background: linear-gradient(
+        135deg,
+        rgba(6, 25, 10, 0.95) 0%,
+        rgba(26, 4, 45, 0.95) 100%
+      ) !important;
+      border-color: #39ff14 !important;
+      color: #39ff14 !important;
+      font-weight: 900 !important;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.75) !important;
+
+      i {
+        color: #39ff14 !important;
+        text-shadow: 0 0 15px #39ff14;
       }
     }
   }
+
+  /* --- RESTAURACIÓN DE BOTONES, CATEGORÍAS Y ETIQUETAS (RESTO DE LA WEB) --- */
+
+  /* Botones del Paginador (Inicio) */
+  .pagination .page-item {
+    .page-link {
+      background: rgba(6, 25, 10, 0.85) !important;
+      border: 2px solid rgba(57, 255, 20, 0.5) !important;
+      color: var(--btn-patinator-text-color) !important;
+      font-weight: bold;
+      transition: all 0.25s ease-in-out;
+      box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
+      margin: 0 3px;
+      border-radius: 6px;
+
+      &:hover {
+        background: rgba(57, 255, 20, 0.25) !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
+        border-color: #39ff14 !important;
+      }
+    }
+
+    &.active .page-link {
+      background: linear-gradient(135deg, #39ff14 0%, #9d4edd 100%) !important;
+      color: #000000 !important;
+      border-color: #39ff14 !important;
+      font-weight: 900;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+    }
+
+    &.disabled .page-link {
+      background: rgba(4, 12, 5, 0.6) !important;
+      border-color: rgba(57, 255, 20, 0.15) !important;
+      color: rgba(57, 255, 20, 0.2) !important;
+      box-shadow: none;
+    }
+  }
+
+  /* Categorías y List Groups */
+  .categories.card {
+    background: var(--categories-gradient) !important;
+
+    .card-header {
+      background: rgba(5, 18, 7, 0.96);
+      border-bottom: 2px solid var(--categories-border);
+      color: var(--heading-color);
+    }
+  }
+
+  .list-group-item {
+    background: transparent !important;
+    border-color: var(--categories-border) !important;
+    border-bottom-width: 2px !important;
+    transition: all 0.2s ease-in-out;
+
+    a {
+      color: var(--text-color) !important;
+      font-weight: bold;
+
+      &:hover {
+        color: var(--categories-icon-hover-color) !important;
+      }
+    }
+
+    &:hover {
+      background: var(--categories-hover-bg) !important;
+      box-shadow: inset 4px 0 0 #39ff14;
+    }
+
+    &:last-child {
+      border-bottom-color: transparent !important;
+    }
+  }
+
+  /* Etiquetas (Tags) individuales como botones de cápsula */
+  .post-tag,
+  .tag,
+  .search-tag {
+    background: rgba(5, 20, 8, 0.8) !important;
+    border: 2px solid var(--tag-border) !important;
+    color: var(--text-muted-highlight-color) !important;
+    box-shadow: 0 0 8px var(--tag-shadow);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.25s ease-in-out;
+    display: inline-block;
+    text-decoration: none !important;
+
+    &:hover {
+      background: var(--tag-hover) !important;
+      color: #ffffff !important;
+      border-color: #39ff14 !important;
+      box-shadow: 0 0 14px rgba(57, 255, 20, 0.6);
+      transform: translateY(-1px);
+    }
+  }
+
+  /* --- Fin de Restauración --- */
 
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
@@ -249,7 +385,7 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #3a8c3a; /* Verde oscuro para comentarios, manteniendo la estética */
+    color: #3a8c3a;
     font-style: italic;
   }
 
@@ -260,7 +396,7 @@
   .highlight .nt {
     color: #39ff14;
     font-weight: 900;
-  } /* Selectores HTML ultra gruesos */
+  }
   .highlight .o,
   .highlight .ow {
     color: #39ff14;
@@ -291,7 +427,7 @@
   .highlight .kp,
   .highlight .kr,
   .highlight .kv {
-    color: #9d4edd; /* Sentencias de control en Morado Neón */
+    color: #9d4edd;
     font-weight: 900;
   }
 
@@ -317,7 +453,7 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #b388ff; /* Strings en morado eléctrico brillante */
+    color: #b388ff;
   }
 
   .highlight .sa {
@@ -345,7 +481,7 @@
   }
   .highlight .na {
     color: #a6ff96;
-  } /* Atributos en verde claro */
+  }
 
   .highlight .m,
   .highlight .mb,
@@ -362,4 +498,61 @@
   .highlight .ss {
     color: #39ff14;
   }
+}
+
+/* ===========================================
+   SIDEBAR ELEGANTE
+=========================================== */
+
+/* Botones normales */
+#sidebar .nav-link {
+  background: transparent !important;
+  border: 2px solid transparent !important;
+  border-radius: 10px !important;
+
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease,
+    color 0.12s ease;
+}
+
+/* Hover */
+#sidebar .nav-link:hover {
+  background: rgba(57, 255, 20, 0.06) !important;
+  border-color: rgba(57, 255, 20, 0.18) !important;
+}
+
+/* Botón activo */
+#sidebar .nav-item.active .nav-link {
+  background: linear-gradient(
+    135deg,
+    rgba(8, 28, 10, 0.95),
+    rgba(40, 15, 70, 0.95)
+  ) !important;
+
+  border: 2px solid #39ff14 !important;
+
+  color: #39ff14 !important;
+
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.22);
+
+  font-weight: 700;
+}
+
+/* Icono activo */
+#sidebar .nav-item.active .nav-link i {
+  color: #39ff14 !important;
+}
+
+/* Texto activo */
+#sidebar .nav-item.active .nav-link span {
+  color: #39ff14 !important;
+}
+
+/* Hover del botón activo */
+#sidebar .nav-item.active .nav-link:hover {
+  border-color: #66ff55 !important;
+
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.3);
 }
