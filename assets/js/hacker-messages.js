@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ==========================
+  // Configuración: cambia estos mensajes y colores a tu gusto
+  // ==========================
   const messages = [
     'ACCESS GRANTED',
     'SCANNING...',
@@ -8,47 +11,91 @@ document.addEventListener('DOMContentLoaded', () => {
     'SYSTEM OVERRIDE',
     'CONNECTED'
   ];
-
-  const colors = [
-    '#00ff88', // verde matrix
-    '#00ffff', // cyan
-    '#ff004c', // rojo
-    '#ffcc00', // amarillo
-    '#ffffff', // blanco
-    '#ff00ff', // magenta
-    '#00b3ff' // azul
+  const palette = [
+    '#3ddc97',
+    '#ff9f43',
+    '#ffd93d',
+    '#6c5ce7',
+    '#00cec9',
+    '#ff7675'
   ];
 
-  function randomMessage() {
-    return messages[Math.floor(Math.random() * messages.length)];
-  }
+  const randomMessage = () =>
+    messages[Math.floor(Math.random() * messages.length)];
+  const randomColor = () => palette[Math.floor(Math.random() * palette.length)];
 
-  function randomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
+  // ==========================
+  // Click: texto flotante + chispas
+  // ==========================
   document.addEventListener('click', (e) => {
-    const message = document.createElement('span');
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // --- Texto flotante ---
+    const text = document.createElement('span');
+    text.className = 'click-hacker-message';
+    text.innerText = randomMessage();
+
     const color = randomColor();
+    text.style.left = `${x}px`;
+    text.style.top = `${y}px`;
+    text.style.color = color;
+    text.style.textShadow = `0 0 6px ${color}66`;
 
-    message.className = 'click-hacker-message';
-    message.textContent = randomMessage();
+    document.body.appendChild(text);
+    setTimeout(() => text.remove(), 1600);
 
-    // usar clientX + scroll para evitar bugs
-    const x = e.clientX + window.scrollX;
-    const y = e.clientY + window.scrollY;
-
-    message.style.position = 'absolute';
-    message.style.left = x + 'px';
-    message.style.top = y + 'px';
-    message.style.color = color;
-    message.style.textShadow = `0 0 8px ${color}`;
-    message.style.pointerEvents = 'none'; // 🔥 evita bloquear clicks
-    message.style.zIndex = '9999'; // 🔥 asegura que siempre esté encima
-
-    document.body.appendChild(message);
-
-    setTimeout(() => {
-      message.remove();
-    }, 1500);
+    // --- Chispas con gravedad ---
+    for (let i = 0; i < 12; i++) {
+      createSpark(x, y, randomColor());
+    }
   });
+
+  // ==========================
+  // Chispa individual animada con física (cae por gravedad)
+  // ==========================
+  function createSpark(x, y, color) {
+    const size = 3 + Math.random() * 4;
+    const spark = document.createElement('span');
+    spark.className = 'click-spark';
+    spark.style.left = `${x}px`;
+    spark.style.top = `${y}px`;
+    spark.style.width = `${size}px`;
+    spark.style.height = `${size}px`;
+    spark.style.background = color;
+    spark.style.boxShadow = `0 0 6px ${color}`;
+    document.body.appendChild(spark);
+
+    // Velocidad inicial: explota hacia los lados y un poco hacia arriba
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1.5 + Math.random() * 3;
+    let vx = Math.cos(angle) * speed;
+    let vy = Math.sin(angle) * speed - 4; // impulso extra hacia arriba
+
+    const gravity = 0.28; // qué tan fuerte "cae"
+    const duration = 900; // ms
+    const start = performance.now();
+    let posX = 0;
+    let posY = 0;
+
+    function step(now) {
+      const elapsed = now - start;
+      if (elapsed >= duration) {
+        spark.remove();
+        return;
+      }
+
+      vy += gravity; // la gravedad acelera la caída
+      posX += vx;
+      posY += vy;
+
+      const progress = elapsed / duration;
+      spark.style.transform = `translate(${posX}px, ${posY}px)`;
+      spark.style.opacity = 1 - progress;
+
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
 });

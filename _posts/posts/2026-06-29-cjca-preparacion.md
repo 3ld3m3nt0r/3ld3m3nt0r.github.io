@@ -1,20 +1,4 @@
----
-pin: true
-layout: post
-title: Mi preparación para la CJCA
-last_modified_at: false
-date: 2026-01-11 06:23:59 -500
-categories: [Protect, Certificaciones]
-tags: [CJCA, Certificaciones]
-home_image: banner
-banner:
-  path: /assets/posts/CJCA2.jpg
-  alt: "CJCA"
----
-
-## Collected Evidence 
-
-### NIX01     10.129.1.48
-
-1.1.	Port Scanning and Service Enumeration
-nmap –sC –sV –p- 10.129.1.48
+ciphertext: ZNu/TesTa1WrfoZnYEPQyKEJg8anKMWTdlrdV0898RM/cdijeSiGoHPKfa2/pCp+fOHSWKbvbwqvdoQP0dPOoPQYI/e3ZYbN6PcP3GLIhTzEkwY+0deGlKRqX+9KXEhJJOJTmno1iW9+tA5E2Z3bBRvXuisD8RHwsr13pRnRqb7VcqwIJZ7OVHpqrJYAJbO7nD7phItKsW+tUqLufN0ZMU5klJwhpyvXMmp7l3MGKht/1jksl5Dq5v8Rc179SUKUvi6pvFUDUKg8OLLXoV3CrCo79EtvO3aIwVK6P9XdtaZ+DUNOw0oqQpGZtwtjFsAtEAtXJjdeJwrYI6fQmV4EFZKF5UuLA3BmwS+2PkCuY28RpfH9zBg6yehD48MqE2lmGm/oIb4DfEz7KE1QH5rUlLIBWo3kN380QmjHgGlWWgFEp4lB0OdZXcSK6Kdr35ZPjbSzTD+1sRzIcGfLaqXApiar+2NsmWmPtF84fJAM/iUvhIEHWDk1WPtYr+KUoSD5
+iv: 763tPG0+Z0hs1+8BjxW69Q==
+salt: zlH/Vuif81YKxCLD44cEUA==
+hmac: r6PghVrKHb2cD7M6R06G2ddpYO9TSSVAVid9VHbZkzs=
