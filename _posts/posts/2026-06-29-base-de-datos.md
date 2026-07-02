@@ -520,7 +520,7 @@ db.courses.find().sort({ duration: -1 }).limit(3)
 
 --- 
 
-#### Ejercicio 1.2: Conteo de cursos por categoría
+#### Ejercicio 1.2: 
 
 Construye una consulta utilizando Aggregate Pipeline que permita obtener el número total de cursos registrados en cada categoría. 
 
@@ -539,7 +539,7 @@ db.courses.aggregate([
   }
 ])
 ```
-#### Ejercicio 2.2:  Promedio de duración por categoría
+#### Ejercicio 2.2:  
 
 Calcula el promedio de duración de los cursos para cada categoría.
 
@@ -559,7 +559,7 @@ db.courses.aggregate([
 ])
 ```
 
-#### Ejercicio 3.2:  Total de cursos activos
+#### Ejercicio 3.2:  
 
 Obtén el total de cursos que actualmente se encuentran activos en la plataforma.
 
@@ -573,7 +573,7 @@ db.courses.aggregate([
   }
 ])
 ```
-#### Ejercicio 4.2:  Cursos con mayor duración
+#### Ejercicio 4.2: 
 
 Recupera los tres cursos con mayor duración registrados en la colección.
 
@@ -601,7 +601,7 @@ db.courses.aggregate([
   }
 ])
 ```
-#### Ejercicio 5.2:  Duración total por categoría
+#### Ejercicio 5.2:  
 
 Calcula la suma total de horas de cursos disponibles en cada categoría. 
 
@@ -624,7 +624,7 @@ db.courses.aggregate([
 ])
 ```
 
-#### Ejercicio 6.2: Categorías con más cursos
+#### Ejercicio 6.2: 
 
 Determina qué categorías tienen más cursos registrados, ordenando los resultados de mayor a menor según la cantidad de cursos.
 
