@@ -1,4 +1,20 @@
-ciphertext: qpuAt4AYiefBXb2fP0bOmFv+hvLcirgOdJ3ssk/F+4q2pVWfi33RbWgGSe4nPY4Rx9X5nkhrVqw32xEDAhVAGviTrdXFpb6gSN0psDzQ5PHZng5KfebjmQ9PWsqHcb33UzFQZPN3nyMA3DZrC6kl0kxPbKPUu5t0+GacYh6LVv4416U2u5fzwhYPRWrc0hU0Uqu17BGMRrlJbsC2q8WcxtRNfldzdmMMb+Pi3PxNME9a4YwwEyjKlRriPpcY7zv2i0vQcSHpB8xkaI6eWPf7ggmfFhjR/D8JdmzgEzgvvLcHBse6hjvMBX2a8pC9kaaIILIk9mKhmXgtINvDNCWVWFX6Pzv0Dunm+gANx5IrVUXWsLpNPSyHUF/IX6BJ5PerXQhnvC0UfFiVKYyM5DHEAuFl5CrdElntZHvXy+CCq7yfHCxac6CTkH1kWtf+Wl4N2RLKGVZb1dOdFb2buIVhHSU5CdA8E71I6IDTFCGJ6Ow+VFfEEcBn9sEeXYWYgwd4
-iv: HaTLwa+mGMzyM+MHglapvg==
-salt: oLjzKFSl1FpWVIbJsrFUMQ==
-hmac: SKn4MhiJgTEjrLNlwAJiIJ1s2aPOCGdDKUYaZhA/7+c=
+---
+pin: true
+layout: post
+title: CJCA
+last_modified_at: false
+date: 2026-01-11 06:23:59 -500
+categories: [Protect, Certificaciones]
+tags: [CJCA, Certificaciones]
+home_image: banner
+banner:
+  path: /assets/posts/CJCA2.jpg
+  alt: "CJCA"
+---
+
+## Collected Evidence 
+
+### NIX01     10.129.1.48
+
+1.1.	Port Scanning and Service Enumeration
+nmap –sC –sV –p- 10.129.1.48

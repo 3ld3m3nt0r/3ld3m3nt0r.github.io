@@ -130,7 +130,7 @@ db.courses.deleteMany(
 
 ### Ejercicios
 
-#### Ejercicio 1
+#### Ejercicio 1: 
 
 Registra un nuevo curso en la colección correspondiente a `Data Visualization with Python`, perteneciente a la categoría 
 `Data Science`, con una `duración` de 20 horas y `disponible` para los estudiantes.
@@ -143,7 +143,7 @@ db.courses.insertOne({
   active: true
 })
 ```
-#### Ejercicio 2
+#### Ejercicio 2: 
 
 Agrega dos nuevos cursos a la plataforma: 
 - `Node.js Fundamentals`, perteneciente a la `categoría` Programming, con una `duración` de 18 horas. 
@@ -168,7 +168,7 @@ db.courses.insertMany([
 ])
 ```
 
-#### Ejercicio 3
+#### Ejercicio : 
 
 El curso MongoDB Fundamentals ha sido actualizado y ahora su duración será de 18 horas. Realiza la operación correspondiente para reflejar este cambio en la colección.
 
@@ -178,7 +178,7 @@ db.courses.updateOne(
     { $set: {duracion: 18} }
 )
 ```
-#### Ejercicio 4
+#### Ejercicio 4: 
 
 La plataforma ha decidido clasificar todos los cursos de la categoría `Database` como cursos de nivel intermedio.
 Actualiza los documentos correspondientes agregando el campo level con el valor `Intermediate`.
@@ -193,7 +193,7 @@ db.courses.updateMany(
 > - Si el campo level no existe, MongoDB lo crea automáticamente al usar $set.
 {: .prompt-tip }
 
-#### Ejercicio 5
+#### Ejercicio 5: 
 
 El curso `Advanced SQL Queries` ya no será ofrecido en la plataforma. 
 Elimina el documento correspondiente de la colección.
@@ -203,7 +203,7 @@ db.courses.deleteOne(
     { title: "Advanced SQL Queries" } 
 ) 
 ```
-#### Ejercicio 6
+#### Ejercicio 6: 
 
 Debido a una reorganización del catálogo, la plataforma eliminará todos los cursos cuya duración sea `menor a 18 horas`. 
 Realiza la operación correspondiente para eliminar dichos documentos
@@ -444,7 +444,7 @@ db.students.aggregate([
 
 ### Ejercicios
 
-#### Ejercicio 1
+#### Ejercicio 1.1: 
 
 Recupera todos los documentos almacenados en la colección courses.
 
@@ -452,7 +452,7 @@ Recupera todos los documentos almacenados en la colección courses.
 db.courses.find()
 ```
 
-#### Ejercicio 2
+#### Ejercicio 2.1: 
 
 Obtén los cursos que actualmente se encuentran disponibles en la plataforma.
 
@@ -460,7 +460,7 @@ Obtén los cursos que actualmente se encuentran disponibles en la plataforma.
 db.courses.find({ active: true });
 ```
 
-#### Ejercicio 3:
+#### Ejercicio 3.1: 
 
 Consulta los cursos cuya duración sea mayor a 18 horas y menor a 25 horas.
 
@@ -470,8 +470,175 @@ db.courses.find({
 });
 ```
 
-#### Ejercicio 4:
+#### Ejercicio 4.1: 
 
 Obtén los cursos que pertenecen a la categoría `Data Science` y cuya duración sea mayor a 20 horas.
 
+```js
+db.courses.find({
+  category: "Data Science",
+  duration: { $gt: 20 }
+})
+```
+
+#### Ejercicio 5.1: 
+
+Recupera los cursos cuya categoría sea Database o Programming
+
+```js
+db.courses.find({
+  category: { $in: ["Database", "Programming"] }
+})
+```
+
+#### Ejercicio 6.1: 
+
+Consulta los cursos mostrando únicamente los campos title y duration.
+
+```js
+db.courses.find(
+  {},
+  { title: 1, duration: 1, _id: 0 }
+)
+```
+
+#### Ejercicio 7.1: 
+
+Recupera todos los cursos ordenados por duración de forma descendente.
+
+```js
+db.courses.find().sort({ duration: -1 })
+```
+
+#### Ejercicio 8.1:
+
+Obtén los tres cursos con mayor duración registrados en la colección.
+
+```js
+db.courses.find().sort({ duration: -1 }).limit(3)
+```
+
+--- 
+
+#### Ejercicio 1.2: Conteo de cursos por categoría
+
+Construye una consulta utilizando Aggregate Pipeline que permita obtener el número total de cursos registrados en cada categoría. 
+
+El resultado debe mostrar: 
+
+- la categoría 
+- la cantidad de cursos registrados en ella.
+
+```js
+db.courses.aggregate([
+  {
+    $group: {
+      _id: "$category",
+      totalCursos: { $sum: 1 }
+    }
+  }
+])
+```
+#### Ejercicio 2.2:  Promedio de duración por categoría
+
+Calcula el promedio de duración de los cursos para cada categoría.
+
+El resultado debe mostrar:
+
+- la categoría 
+- el promedio de duración de sus cursos.
+
+```js
+db.courses.aggregate([
+  {
+    $group: {
+      _id: "$category",
+      duracionPromedio: { $avg: "$duration" }
+    }
+  }
+])
+```
+
+#### Ejercicio 3.2:  Total de cursos activos
+
+Obtén el total de cursos que actualmente se encuentran activos en la plataforma.
+
+```js
+db.courses.aggregate([
+  {
+    $match: { active: true }
+  },
+  {
+    $count: "cursosActivos"
+  }
+])
+```
+#### Ejercicio 4.2:  Cursos con mayor duración
+
+Recupera los tres cursos con mayor duración registrados en la colección.
+
+El resultado debe incluir: 
+
+- título del curso 
+- duración 
+- categoría.
+
+```js
+db.courses.aggregate([
+  {
+    $sort: { duration: -1 }
+  },
+  {
+    $limit: 3
+  },
+  {
+    $project: {
+      _id: 0,
+      title: 1,
+      duration: 1,
+      category: 1
+    }
+  }
+])
+```
+#### Ejercicio 5.2:  Duración total por categoría
+
+Calcula la suma total de horas de cursos disponibles en cada categoría. 
+
+El resultado debe mostrar: 
+
+- categoría 
+- total de horas acumuladas.
+
+```js
+db.courses.aggregate([
+  {
+    $match: { active: true }
+  },
+  {
+    $group: {
+      _id: "$category",
+      totalHoras: { $sum: "$duration" }
+    }
+  }
+])
+```
+
+#### Ejercicio 6.2: Categorías con más cursos
+
+Determina qué categorías tienen más cursos registrados, ordenando los resultados de mayor a menor según la cantidad de cursos.
+
+```js
+db.courses.aggregate([
+  {
+    $group: {
+      _id: "$category",
+      totalCursos: { $sum: 1 }
+    }
+  },
+  {
+    $sort: { totalCursos: -1 }
+  }
+])
+```
 
