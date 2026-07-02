@@ -19,7 +19,7 @@ Básicamente, esta sección te dice algo bien claro: en seguridad informática n
 La idea no es aprender mil herramientas o lenguajes, sino entender bien los fundamentos. Si dominas los principios, puedes adaptarte rápido a cualquier tecnología nueva.
 
 ![alt text](assets/img/seccion1.1.png){: w="750" h="750" }
-
+|
 También te hace ver que hay dos caminos: saber un poco de todo sin dominar nada, o especializarte. Pero lo más inteligente es desarrollar tu propia forma de aprender, investigar y aplicar lo que encuentras según el contexto.
 
 Otra cosa clave: no sirve solo leer o mirar teoría. Si no practicas, no avanzas. En este campo mejoras haciendo, equivocándote y probando.
