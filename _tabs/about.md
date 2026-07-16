@@ -5,10 +5,10 @@ title: Acerca del blog
 order: 4
 ---
 
-Pam ya tiene hipercarga
+Bienvenidos a mi blog :V
 
 ![Pam](assets/img/pam.gif){: w="200" h="200" }
 
 
-> Pam ya tiene hipercarga
+> PAM
 {: .prompt-info }
