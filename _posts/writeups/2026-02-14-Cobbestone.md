@@ -1,5 +1,4 @@
 ---
-pin: true
 layout: post
 title: HackTheBox-Cobblestone
 description: Resolucion de la maquina Cobblestone de HackTheBox
