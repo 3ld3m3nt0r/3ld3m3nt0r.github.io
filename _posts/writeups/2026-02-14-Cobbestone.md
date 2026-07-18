@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HackTheBox-Cobblestone
+title: HackTheBox-Cobblestone [80% completado]
 description: Resolucion de la maquina Cobblestone de HackTheBox
 date: 2026-07-15 20:24:59 -500
 categories: [HTB, Insane]
