@@ -9,6 +9,10 @@ Bienvenidos a mi blog :V
 
 ![Pam](assets/img/pam.gif){: w="200" h="200" }
 
+## Progreso: 
 
-> PAM
-{: .prompt-info }
+🎯 Dia 1: 
+- 5:00 pm -> Sorcery (Intrusión)
+
+
+
