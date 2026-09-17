@@ -5,14 +5,14 @@ title: Acerca del blog
 order: 4
 ---
 
-Bienvenidos a mi blog :V
+> Hola!!! Bienvenido a mi rincón del internet. Espero que te guste lo que subo (y lo que iré subiendo por aquí).
+{: .prompt-tip }
 
-![Pam](assets/img/pam.gif){: w="200" h="200" }
+## Certificaciones:
 
-## Progreso: 
+![alt text](/assets/img/crta.png){: w="500" h="500" }
 
-🎯 Dia 1: 
-- 5:00 pm -> Sorcery (Intrusión)
+![alt text](/assets/img/cjca.png){: w="500" h="500" }
 
-
+![alt text](/assets/img/cpts.png){: w="500" h="500" }
 

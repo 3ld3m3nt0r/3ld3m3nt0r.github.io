@@ -9,3 +9,11 @@
 - type: hackthebox
   icon: "fa-solid fa-cube"
   url: "https://app.hackthebox.com/users/2413315"
+
+- type: linkedin
+  icon: "fa-brands fa-linkedin"
+  url: "https://www.linkedin.com/in/tu-usuario"
+
+- type: whatsapp
+  icon: "fa-brands fa-whatsapp"
+  url: "https://wa.me/51987654321"
