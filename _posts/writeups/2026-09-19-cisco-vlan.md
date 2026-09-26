@@ -3,9 +3,9 @@ layout: post
 title: Cisco packet trace (VLAN)
 description: Configuración de VLANs 
 last_modified_at: false
-date: 2026-01-11 06:23:59 -500
+date: 2026-09-19 12:32:07 -0500
 categories: [Cisco Packet Trace]
-tags: [Cisco]
+tags: [Cisco, VLAN]
 home_image: logo
 logo:
   path: /assets/writeups/Cisco-Packet-Tracer-CPT.png
