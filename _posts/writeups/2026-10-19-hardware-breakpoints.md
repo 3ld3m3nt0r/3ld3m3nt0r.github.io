@@ -1,16 +1,4 @@
----
-layout: post
-title: Hardware Breakpoints
-description: Malware Dev. Tools
-last_modified_at: false
-date: 2026-10-19 10:32:07 -0500
-categories: [Protect, Hardware Breakpoints]
-tags: [Cisco, VLAN]
-home_image: logo
-logo:
-  path: /assets/writeups/hb.png
-  alt: "Hardware Breakpoints"
----
-
-Test protect...
-
+ciphertext: eMena/z7yk3gB68Z6H6L3ETYYf05f7VVotQVBRQ7EZpIpPrHmOH9+rDBHmqxoSitnYcdxlPXtIuJRvO4BR6JK2vN1ixTru4JJ8GUZLu1S0HgOuU4/2lPmK+tB00a1bya9d7N7JO7rPWCwAV8L6njkue+ASMjSUSMcEiJfoD9sIGxkrdGuoV2rQvlYvjNvdeV0Cuk327x1p7rWpJAG2TqaGDyP6J5FgMj3mqLJqXK2QvBXx8Wykj1nysXeFfdMIPihGwr4WLK4Em/45o6yfo0B1avFlaK+MjijPc9rr90digfsswVYsNRft99AnDTDWAH1N6PGsIiLH0O/oBfDrRD1cBdk2zP3L26x2hOunCApq0cr/ER4e1C1OC5btQAJKkWktTOAYSPM19Iz0j8RPDWZHg6DPZp/Jvx+YhHinLGshg=
+iv: B5rAucatCBIHtR/jZjgeCA==
+salt: +au19DgYKDqKJE0jMemdyw==
+hmac: nD6TjOV/PW58jLDz2bUGa2+To/PplbMEkDlHRGMDcmc=
